@@ -1,0 +1,274 @@
+/* =========================================
+   LUNÉ CONTACT FORM
+========================================= */
+
+:host {
+  display: block;
+}
+
+.lune-form {
+  width: min(1180px, calc(100% - 12vw));
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =========================================
+   ROW
+========================================= */
+
+.form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 25px;
+
+  margin-bottom: 30px;
+}
+
+
+/* =========================================
+   FIELD
+========================================= */
+
+.form-field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 11px;
+}
+
+.form-field label {
+  color: #9e9688;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(183, 154, 91, .28);
+
+  border-radius: 0;
+
+  outline: none;
+
+  background: rgba(255, 255, 255, .015);
+
+  color: #e9e2d6;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 13px;
+
+  transition:
+    border-color .3s ease,
+    background .3s ease,
+    box-shadow .3s ease;
+}
+
+.form-field input,
+.form-field select {
+  height: 57px;
+
+  padding: 0 17px;
+}
+
+.form-field textarea {
+  min-height: 145px;
+
+  padding: 17px;
+
+  resize: vertical;
+}
+
+
+/* =========================================
+   PLACEHOLDER
+========================================= */
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #625f58;
+}
+
+
+/* =========================================
+   SELECT
+========================================= */
+
+.form-field select {
+  cursor: pointer;
+
+  appearance: none;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      #b79a5b 50%
+    ),
+    linear-gradient(
+      135deg,
+      #b79a5b 50%,
+      transparent 50%
+    );
+
+  background-position:
+    calc(100% - 20px) 24px,
+    calc(100% - 14px) 24px;
+
+  background-size:
+    6px 6px,
+    6px 6px;
+
+  background-repeat: no-repeat;
+}
+
+.form-field select option {
+  background: #171814;
+
+  color: #eee9df;
+}
+
+
+/* =========================================
+   FOCUS
+========================================= */
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+
+  border-color: #b79a5b;
+
+  background: rgba(183, 154, 91, .035);
+
+  box-shadow:
+    0 0 0 1px rgba(183, 154, 91, .05);
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message-field {
+  margin-top: 2px;
+}
+
+
+/* =========================================
+   SUBMIT
+========================================= */
+
+.submit-area {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: 28px;
+}
+
+.submit-area button {
+  min-width: 190px;
+
+  height: 56px;
+
+  padding: 0 25px;
+
+  border: 1px solid #d7bc82;
+
+  border-radius: 0;
+
+  background: #dfc995;
+
+  color: #171713;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.2px;
+
+  cursor: pointer;
+
+  transition:
+    transform .3s ease,
+    background .3s ease,
+    opacity .3s ease;
+}
+
+.submit-area button span {
+  margin-left: 14px;
+
+  font-size: 17px;
+}
+
+.submit-area button:hover:not(:disabled) {
+  background: #eddcaf;
+
+  transform: translateY(-2px);
+}
+
+.submit-area button:disabled {
+  opacity: .4;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .lune-form {
+    width: calc(100% - 8vw);
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .lune-form {
+    width: calc(100% - 2.4rem);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+  }
+
+  .submit-area {
+    justify-content: stretch;
+  }
+
+  .submit-area button {
+    width: 100%;
+  }
+
+}

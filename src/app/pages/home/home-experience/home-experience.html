@@ -1,0 +1,690 @@
+<section
+  id="experience"
+  #experienceSection
+  class="gallery theme-dark"
+  [class.is-visible]="isExperienceVisible"
+>
+
+  <!-- =====================================================
+       LEFT SECTION RAIL
+       ===================================================== -->
+
+  <aside class="gallery__rail">
+
+    <span class="gallery__rail-number">
+      06
+    </span>
+
+    <span class="gallery__rail-label">
+      THE<br />
+      GALLERY
+    </span>
+
+  </aside>
+
+
+  <!-- =====================================================
+       GALLERY PREVIEW
+       Only 4 images on homepage
+       ===================================================== -->
+
+  <div class="gallery__strip">
+
+    <!-- IMAGE 01 -->
+
+    <figure class="gallery__item gallery__item--one">
+
+      <img
+        src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1400&auto=format&fit=crop"
+        alt="Elegant mountain retreat interior"
+        loading="lazy"
+      />
+
+    </figure>
+
+
+    <!-- IMAGE 02 -->
+
+    <figure class="gallery__item gallery__item--two">
+
+      <img
+        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1400&auto=format&fit=crop"
+        alt="Misty Himalayan mountain landscape"
+        loading="lazy"
+      />
+
+    </figure>
+
+
+    <!-- IMAGE 03 -->
+
+    <figure class="gallery__item gallery__item--three">
+
+      <img
+        src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=1400&auto=format&fit=crop"
+        alt="Warm wooden mountain cabin surrounded by nature"
+        loading="lazy"
+      />
+
+    </figure>
+
+
+    <!-- IMAGE 04 -->
+
+    <figure class="gallery__item gallery__item--four">
+
+      <img
+        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=1400&auto=format&fit=crop"
+        alt="Mountain valley at golden hour"
+        loading="lazy"
+      />
+
+    </figure>
+
+  </div>
+
+
+  <!-- =====================================================
+       RIGHT EDITORIAL CONTENT
+       ===================================================== -->
+
+  <div class="gallery__content">
+
+    <span class="gallery__eyebrow">
+      Moments at LUNÉ
+    </span>
+
+
+    <h2 class="gallery__title">
+      Moments<br />
+      at LUNÉ
+    </h2>
+
+
+    <p class="gallery__copy">
+      A collection of quiet places, fleeting views and
+      moments worth remembering.
+    </p>
+
+
+    <button
+      type="button"
+      class="gallery__cta"
+      (click)="openGallery()"
+    >
+
+      <span>
+        Explore Gallery
+      </span>
+
+      <span
+        class="gallery__cta-arrow"
+        aria-hidden="true"
+      >
+        →
+      </span>
+
+    </button>
+
+  </div>
+
+
+  <!-- =====================================================
+       DECORATIVE BOTANICAL BRANCH
+       ===================================================== -->
+
+  <svg
+    class="gallery__branch"
+    viewBox="0 0 180 420"
+    fill="none"
+    aria-hidden="true"
+  >
+
+    <path
+      d="M150 410
+         C120 340 125 280 100 220
+         C78 166 50 120 25 15"
+      stroke="currentColor"
+      stroke-width="1"
+    />
+
+    <ellipse
+      cx="42"
+      cy="70"
+      rx="22"
+      ry="9"
+      transform="rotate(-35 42 70)"
+      stroke="currentColor"
+    />
+
+    <ellipse
+      cx="92"
+      cy="145"
+      rx="22"
+      ry="9"
+      transform="rotate(25 92 145)"
+      stroke="currentColor"
+    />
+
+    <ellipse
+      cx="73"
+      cy="215"
+      rx="22"
+      ry="9"
+      transform="rotate(-25 73 215)"
+      stroke="currentColor"
+    />
+
+    <ellipse
+      cx="122"
+      cy="285"
+      rx="22"
+      ry="9"
+      transform="rotate(25 122 285)"
+      stroke="currentColor"
+    />
+
+  </svg>
+
+</section>
+
+<!-- ================= Section 07 — The Details ================= -->
+<section
+  id="details"
+  #detailsSection
+  class="details theme-light"
+  [class.is-visible]="isDetailsVisible"
+>
+  <div class="details__intro">
+
+    <div class="details__eyebrow">
+      <span class="details__eyebrow-index">07</span>
+      <span class="details__eyebrow-slash" aria-hidden="true">/</span>
+      <span class="details__eyebrow-label">The Details</span>
+    </div>
+
+    <span class="details__divider" aria-hidden="true"></span>
+
+    <h2 class="details__heading">
+      <span class="details__word">Everything</span>
+      <span class="details__word">you</span>
+      <span class="details__word">need.</span>
+      <br />
+      <span class="details__word">Nothing</span>
+      <span class="details__word">you</span>
+      <span class="details__word">don't.</span>
+    </h2>
+
+    <p class="details__copy">
+      Thoughtfully considered comforts, quietly woven into every stay.
+    </p>
+
+  </div>
+
+
+  <div class="details__amenities">
+
+    <article class="details__item">
+
+      <span class="details__item-number">01</span>
+
+      <span class="details__item-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path
+            d="M2 9.5c1.4 1.6 2.8 1.6 4.2 0s2.8-1.6 4.2 0
+               2.8 1.6 4.2 0 2.8-1.6 4.2 0
+               2.8 1.6 4.2 0"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M2 14.5c1.4 1.6 2.8 1.6 4.2 0
+               s2.8-1.6 4.2 0 2.8 1.6 4.2 0
+               2.8-1.6 4.2 0 2.8 1.6 4.2 0"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </span>
+
+      <span class="details__item-label">
+        Infinity Pool
+      </span>
+
+    </article>
+
+
+    <article class="details__item">
+
+      <span class="details__item-number">02</span>
+
+      <span class="details__item-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path
+            d="M12 21c-4-1-6.5-4.2-6.5-8
+               3 0 5.2 1.3 6.5 3.4
+               C13.3 14.3 15.5 13 18.5 13
+               c0 3.8-2.5 7-6.5 8Z"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 21c-2-2.6-2-6 0-9.5
+               2 3.5 2 6.9 0 9.5Z"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 11.5V4"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </span>
+
+      <span class="details__item-label">
+        Spa &amp; Wellness
+      </span>
+
+    </article>
+
+
+    <article class="details__item">
+
+      <span class="details__item-number">03</span>
+
+      <span class="details__item-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path
+            d="M4 15c0-4.4 3.6-8 8-8s8 3.6 8 8"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M3 15h18"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M12 7V4.5"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M9 18.5h6"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </span>
+
+      <span class="details__item-label">
+        Private Dining
+      </span>
+
+    </article>
+
+
+    <article class="details__item">
+
+      <span class="details__item-number">04</span>
+
+      <span class="details__item-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path
+            d="M5 15c0-4.2 3-7.5 7-7.5s7 3.3 7 7.5"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M4 15h16"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M10.3 17.5c.4.8 1 1.2 1.7 1.2s1.3-.4 1.7-1.2"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+          />
+          <circle
+            cx="12"
+            cy="4.8"
+            r="0.9"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+
+      <span class="details__item-label">
+        Concierge Service
+      </span>
+
+    </article>
+
+
+    <article class="details__item">
+
+      <span class="details__item-number">05</span>
+
+      <span class="details__item-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path
+            d="M3.5 10c4.7-4.7 12.3-4.7 17 0"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M6.7 13.2c3-3 7.6-3 10.6 0"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M9.9 16.4c1.3-1.3 3-1.3 4.2 0"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+          />
+          <circle
+            cx="12"
+            cy="19"
+            r="0.9"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+
+      <span class="details__item-label">
+        High-Speed WiFi
+      </span>
+
+    </article>
+
+
+    <article class="details__item">
+
+      <span class="details__item-number">06</span>
+
+      <span class="details__item-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path
+            d="M12 3c1 3-2.5 3.6-2.5 6.6
+               0 1.2.8 2 1.7 2
+               -1-1.3-.4-2.4.4-3.4
+               1 1 1.6 1.9 1.6 3.2
+               0 1.2-.8 2.2-1.7 2.6
+               2.6-.2 4.5-2.1 4.5-4.8
+               C16 6.4 13 6 12 3Z"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M8 15.5c0 2.5 1.8 4.5 4 4.5
+               s4-2 4-4.5c0-1-.3-1.8-.8-2.5
+               -.4 1.6-1.6 2.4-2.7 2.1
+               .6-1 .4-1.9-.5-2.7
+               -1.4 1-3 1.7-4 3.1Z"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+
+      <span class="details__item-label">
+        Fireplace
+      </span>
+
+    </article>
+
+  </div>
+</section>
+<!-- =============== end Section 07 — The Details ================= -->
+
+
+<!-- ============================================================
+     SECTION 08 — THE JOURNAL
+     ============================================================ -->
+
+<section
+  id="journal"
+  #journalSection
+  class="journal theme-dark"
+  [class.is-visible]="isJournalVisible"
+>
+  <!-- INTRO -->
+  <div class="journal__intro">
+
+    <div class="journal__eyebrow">
+      <span class="journal__eyebrow-index">08</span>
+
+      <span
+        class="journal__eyebrow-slash"
+        aria-hidden="true"
+      >
+        /
+      </span>
+
+      <span class="journal__eyebrow-label">
+        The Journal
+      </span>
+    </div>
+
+    <span
+      class="journal__divider"
+      aria-hidden="true"
+    ></span>
+
+    <h2 class="journal__heading">
+      <span class="journal__word">Stories</span>
+      <span class="journal__word">from</span>
+      <span class="journal__word">LUNÉ.</span>
+    </h2>
+
+    <button
+      type="button"
+      class="journal__cta"
+      (click)="openJournal()"
+    >
+      <span>Explore Journal</span>
+
+      <span
+        class="journal__cta-arrow"
+        aria-hidden="true"
+      >
+        →
+      </span>
+    </button>
+
+  </div>
+
+
+  <!-- FEATURED STORY -->
+  <button
+    type="button"
+    class="journal__featured"
+    (click)="openArticle('the-art-of-slow-living')"
+  >
+
+    <img
+      class="journal__featured-image"
+      src="./images/home-journal.png"
+      alt="Quiet Himalayan landscape surrounded by mountains"
+      loading="lazy"
+    />
+
+    <span
+      class="journal__featured-scrim"
+      aria-hidden="true"
+    ></span>
+
+    <span class="journal__featured-content">
+
+      <span class="journal__featured-eyebrow">
+        LUNÉ Journal · 01
+      </span>
+
+      <span class="journal__featured-title">
+        The Art of Slow Living
+      </span>
+
+      <span class="journal__featured-sub">
+        A quieter way of travelling, shaped by mountains,
+        mornings and moments that ask nothing from you.
+      </span>
+
+      <span class="journal__featured-meta">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <circle
+            cx="12"
+            cy="12"
+            r="8.5"
+            stroke="currentColor"
+            stroke-width="1.2"
+          />
+
+          <path
+            d="M12 7.5v5l3 1.8"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+          />
+        </svg>
+
+        6 min read
+
+      </span>
+
+    </span>
+
+  </button>
+
+
+  <!-- SECONDARY STORIES -->
+  <div class="journal__list">
+
+    <button
+      type="button"
+      class="journal__story"
+      (click)="openArticle('where-the-mountains-begin')"
+    >
+
+      <span class="journal__story-thumb">
+
+        <img
+          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=900&auto=format&fit=crop"
+          alt="Mountain landscape"
+          loading="lazy"
+        />
+
+      </span>
+
+      <span class="journal__story-body">
+
+        <span class="journal__story-title">
+          Where the Mountains Begin
+        </span>
+
+        <span class="journal__story-meta">
+          Journey · 4 min read
+        </span>
+
+      </span>
+
+    </button>
+
+
+    <button
+      type="button"
+      class="journal__story"
+      (click)="openArticle('rituals-of-the-himalayas')"
+    >
+
+      <span class="journal__story-thumb">
+
+        <img
+          src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=900&auto=format&fit=crop"
+          alt="Quiet architectural retreat"
+          loading="lazy"
+        />
+
+      </span>
+
+      <span class="journal__story-body">
+
+        <span class="journal__story-title">
+          Rituals of the Himalayas
+        </span>
+
+        <span class="journal__story-meta">
+          Culture · 5 min read
+        </span>
+
+      </span>
+
+    </button>
+
+  </div>
+
+</section>
+
+<!-- ================= END SECTION 08 ================= -->
+<!-- Section 09 — Words From Our Guests -->
+<section id="testimonial" #testimonialSection class="testimonial theme-light" [class.is-visible]="isTestimonialVisible">
+  <div class="testimonial__bg" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=1600&auto=format&fit=crop" alt="" loading="lazy" />
+  </div>
+
+  <div class="testimonial__rail">
+    <span class="testimonial__rail-index">09</span>
+    <span class="testimonial__rail-label">Words From<br />Our Guests</span>
+  </div>
+
+  <div class="testimonial__body">
+    <span class="testimonial__mark" aria-hidden="true">&ldquo;</span>
+    <blockquote class="testimonial__quote" [class.is-fading]="isTestimonialFading">
+      {{ activeTestimonial.quote }}
+    </blockquote>
+  </div>
+
+  <div class="testimonial__meta">
+    <div class="testimonial__author" [class.is-fading]="isTestimonialFading">
+      <span class="testimonial__author-name">{{ activeTestimonial.author }}</span>
+      <span class="testimonial__stars" aria-label="5 out of 5 stars">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.6 9.9 5.6 15.2 5.9 11.1 9.2 12.4 14.4 8 11.5 3.6 14.4 4.9 9.2 0.8 5.9 6.1 5.6Z"/></svg>
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.6 9.9 5.6 15.2 5.9 11.1 9.2 12.4 14.4 8 11.5 3.6 14.4 4.9 9.2 0.8 5.9 6.1 5.6Z"/></svg>
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.6 9.9 5.6 15.2 5.9 11.1 9.2 12.4 14.4 8 11.5 3.6 14.4 4.9 9.2 0.8 5.9 6.1 5.6Z"/></svg>
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.6 9.9 5.6 15.2 5.9 11.1 9.2 12.4 14.4 8 11.5 3.6 14.4 4.9 9.2 0.8 5.9 6.1 5.6Z"/></svg>
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.6 9.9 5.6 15.2 5.9 11.1 9.2 12.4 14.4 8 11.5 3.6 14.4 4.9 9.2 0.8 5.9 6.1 5.6Z"/></svg>
+      </span>
+    </div>
+
+    <div class="testimonial__nav">
+      <button type="button" class="testimonial__nav-btn" (click)="prevTestimonial()" aria-label="Previous testimonial">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M14.5 6 9 12l5.5 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button type="button" class="testimonial__nav-btn" (click)="nextTestimonial()" aria-label="Next testimonial">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9.5 6 15 12l-5.5 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+</section>

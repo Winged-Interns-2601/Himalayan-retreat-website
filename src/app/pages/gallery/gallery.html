@@ -1,0 +1,140 @@
+<div class="gallery-page">
+
+  <!-- ================= NAVBAR ================= -->
+
+  <header class="gallery-page__nav">
+
+    <button
+      type="button"
+      class="gallery-page__back"
+      (click)="goHome()"
+      aria-label="Back to LUNÉ home"
+    >
+      <span class="gallery-page__back-arrow">←</span>
+      <span>Back to LUNÉ</span>
+    </button>
+
+    <div class="gallery-page__logo">
+      LUNÉ
+    </div>
+
+    <span class="gallery-page__nav-label">
+      The Gallery
+    </span>
+
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="gallery-page__main">
+
+    <!-- LEFT EDITORIAL RAIL -->
+
+    <aside class="gallery-page__rail">
+
+      <span class="gallery-page__rail-number">
+        06
+      </span>
+
+      <span class="gallery-page__rail-slash">
+        /
+      </span>
+
+      <span class="gallery-page__rail-label">
+        THE<br />
+        GALLERY
+      </span>
+
+    </aside>
+
+
+    <!-- ================= INTRO ================= -->
+
+    <section class="gallery-page__intro">
+
+      <span class="gallery-page__eyebrow">
+        Moments at LUNÉ
+      </span>
+
+      <h1 class="gallery-page__title">
+        A place<br />
+        to remember.
+      </h1>
+
+      <p class="gallery-page__description">
+        Quiet mornings, mountain light, considered spaces and
+        moments that stay long after you leave.
+      </p>
+
+    </section>
+
+
+    <!-- ================= IMAGE GALLERY ================= -->
+
+    <section class="gallery-page__grid">
+
+      @for (image of images; track image.src) {
+
+        <figure
+          class="gallery-page__item"
+          [class]="image.className"
+        >
+
+          <div class="gallery-page__image-frame">
+
+            <img
+              [src]="image.src"
+              [alt]="image.alt"
+              loading="lazy"
+            />
+
+          </div>
+
+        </figure>
+
+      }
+
+    </section>
+
+
+    <!-- ================= END NOTE ================= -->
+
+    <section class="gallery-page__end">
+
+      <span class="gallery-page__end-line"></span>
+
+      <p>
+        Come slowly.<br />
+        Stay awhile.
+      </p>
+
+      <span class="gallery-page__end-line"></span>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="gallery-page__footer">
+
+    <span>
+      LUNÉ
+    </span>
+
+    <span>
+      Kullu Valley · Himachal Pradesh
+    </span>
+
+    <button
+      type="button"
+      (click)="goHome()"
+    >
+      Back to home ↑
+    </button>
+
+  </footer>
+
+</div>

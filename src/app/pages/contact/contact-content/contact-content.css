@@ -1,0 +1,614 @@
+/* =========================================
+   LUNÉ CONTACT CONTENT
+========================================= */
+
+:host {
+  display: block;
+}
+
+.contact-content {
+  background: #0a0b09;
+  color: #eee9df;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.contact-hero {
+  position: relative;
+
+  min-height: 610px;
+  height: 78vh;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/images/contact-hero.png");
+
+  background-size: cover;
+  background-position: center;
+
+  transform: scale(1.02);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 8, 7, .90) 0%,
+      rgba(7, 8, 7, .62) 42%,
+      rgba(7, 8, 7, .18) 75%,
+      rgba(7, 8, 7, .35) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(7, 8, 7, .90) 0%,
+      transparent 60%
+    );
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  width: min(1180px, 88%);
+  margin: 0 auto;
+  /* padding-bottom: 90px; */
+padding: 0;
+transform: translateY(-4%);
+}
+
+.eyebrow,
+.section-label {
+  display: block;
+
+  color: #b79a5b;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  margin-bottom: 28px;
+}
+
+.hero-inner h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(58px, 7vw, 96px);
+
+  font-weight: 400;
+
+  line-height: .91;
+
+  letter-spacing: -3px;
+
+  color: #f2eee5;
+}
+
+.gold-line {
+  width: 55px;
+  height: 1px;
+
+  margin: 32px 0 24px;
+
+  background: #b79a5b;
+}
+
+.hero-inner p {
+  margin: 0;
+
+  color: rgba(240, 235, 225, .80);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   CONTACT INFO
+========================================= */
+
+.contact-info-section {
+  padding: 110px 0;
+
+  border-top: 1px solid rgba(183, 154, 91, .20);
+}
+
+.info-container {
+  width: min(1180px, 88%);
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: .8fr 1.2fr;
+
+  gap: 100px;
+}
+
+
+/* LEFT */
+
+.contact-info {
+  padding-right: 80px;
+
+  border-right: 1px solid rgba(183, 154, 91, .20);
+}
+
+.contact-info h2 {
+  margin: 30px 0 25px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 46px;
+
+  line-height: 1.05;
+
+  font-weight: 400;
+
+  color: #eee9df;
+}
+
+.contact-info h2 em,
+.mountain-content h2 em {
+  color: #b79a5b;
+
+  font-style: italic;
+}
+
+.info-description {
+  max-width: 390px;
+
+  margin: 0 0 50px;
+
+  color: #969188;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.9;
+}
+
+.info-details {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 30px;
+}
+
+.detail {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.detail-label {
+  margin-bottom: 3px;
+
+  color: #b79a5b;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+.detail a,
+.detail p {
+  margin: 0;
+
+  color: #c8c2b7;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  text-decoration: none;
+}
+
+.detail a:hover {
+  color: #d2b36d;
+}
+
+.social-area {
+  margin-top: 50px;
+
+  padding-top: 28px;
+
+  border-top: 1px solid rgba(183, 154, 91, .17);
+}
+
+.social-area > span {
+  display: block;
+
+  margin-bottom: 17px;
+
+  color: #706b62;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+}
+
+.social-links {
+  display: flex;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: #b79a5b;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+
+  text-decoration: none;
+
+  transition: .3s;
+}
+
+.social-links a:hover {
+  color: #fff;
+}
+
+
+/* =========================================
+   FORM AREA
+========================================= */
+
+.form-area {
+  padding-top: 5px;
+}
+
+.form-heading > span {
+  color: #b79a5b;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+}
+
+.form-heading h3 {
+  margin: 18px 0 42px;
+
+  color: #eee9df;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 39px;
+
+  font-weight: 400;
+
+  line-height: 1.08;
+}
+
+
+/* =========================================
+   MOUNTAIN SECTION
+========================================= */
+
+.mountain-section {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  min-height: 580px;
+
+  background: #10110f;
+
+  border-top: 1px solid rgba(183, 154, 91, .20);
+}
+
+.mountain-image {
+  min-height: 580px;
+
+  background-image:
+    linear-gradient(
+      rgba(5, 6, 5, .12),
+      rgba(5, 6, 5, .30)
+    ),
+    url("/images/contact-mountain.png");
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+.mountain-content {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 80px;
+}
+
+.mountain-content h2 {
+  margin: 25px 0 20px;
+
+  color: #eee9df;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 48px;
+
+  font-weight: 400;
+
+  line-height: 1.03;
+}
+
+.mountain-line {
+  width: 48px;
+  height: 1px;
+
+  margin: 5px 0 25px;
+
+  background: #b79a5b;
+}
+
+.mountain-content > p {
+  max-width: 440px;
+
+  margin: 0 0 40px;
+
+  color: #918d84;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+.mountain-links {
+  display: flex;
+
+  flex-direction: column;
+
+  max-width: 500px;
+}
+
+.mountain-links a {
+  display: grid;
+
+  grid-template-columns: 50px 1fr auto;
+
+  align-items: center;
+
+  min-height: 62px;
+
+  border-top: 1px solid rgba(183, 154, 91, .25);
+
+  color: #d0c8ba;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  text-decoration: none;
+
+  transition: .3s;
+}
+
+.mountain-links a:last-child {
+  border-bottom: 1px solid rgba(183, 154, 91, .25);
+}
+
+.mountain-links a span {
+  color: #b79a5b;
+}
+
+.mountain-links a b {
+  color: #b79a5b;
+
+  font-size: 17px;
+
+  font-weight: 400;
+
+  transition: .3s;
+}
+
+.mountain-links a:hover {
+  padding-left: 8px;
+
+  color: #fff;
+}
+
+.mountain-links a:hover b {
+  transform: translateX(5px);
+}
+
+
+/* =========================================
+   CLOSING
+========================================= */
+
+.contact-closing {
+  padding: 100px 20px;
+
+  text-align: center;
+
+  background: #0a0b09;
+
+  border-top: 1px solid rgba(183, 154, 91, .18);
+}
+
+.closing-mark {
+  margin-bottom: 22px;
+
+  color: #b79a5b;
+
+  font-family: Georgia, serif;
+
+  font-size: 27px;
+}
+
+.contact-closing p {
+  margin: 0 0 10px;
+
+  color: #81796b;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+}
+
+.contact-closing h2 {
+  margin: 0;
+
+  color: #eee9df;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(30px, 4vw, 48px);
+
+  font-weight: 400;
+
+  letter-spacing: 5px;
+}
+
+.closing-line {
+  width: 45px;
+  height: 1px;
+
+  margin: 28px auto 0;
+
+  background: #b79a5b;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .info-container {
+    grid-template-columns: 1fr;
+
+    gap: 65px;
+  }
+
+  .contact-info {
+    padding-right: 0;
+
+    padding-bottom: 60px;
+
+    border-right: none;
+
+    border-bottom: 1px solid rgba(183, 154, 91, .20);
+  }
+
+  .mountain-section {
+    grid-template-columns: 1fr;
+  }
+
+  .mountain-image {
+    min-height: 430px;
+  }
+
+  .mountain-content {
+    padding: 70px 8%;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .contact-hero {
+    min-height: 600px;
+  }
+
+  .hero-inner {
+    width: 90%;
+
+    padding-bottom: 60px;
+  }
+
+  .hero-inner h1 {
+    font-size: 52px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .contact-info-section {
+    padding: 75px 0;
+  }
+
+  .info-container {
+    width: 90%;
+  }
+
+  .contact-info h2 {
+    font-size: 38px;
+  }
+
+  .form-heading h3 {
+    font-size: 33px;
+  }
+
+  .mountain-content {
+    padding: 60px 7%;
+  }
+
+  .mountain-content h2 {
+    font-size: 39px;
+  }
+
+  .mountain-image {
+    min-height: 330px;
+  }
+
+  .contact-closing {
+    padding: 75px 20px;
+  }
+
+  .contact-closing h2 {
+    font-size: 27px;
+
+    letter-spacing: 3px;
+  }
+
+}

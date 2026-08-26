@@ -1,0 +1,67 @@
+<section class="arrival" id="arrival" [class.is-revealed]="isRevealed">
+
+  <div class="arrival__bg" #bg>
+    <img
+      class="arrival__img"
+      src="/images/lune-hero.png"
+      alt="Luxury mountain retreat surrounded by nature"
+    />
+  </div>
+
+  <div class="arrival__scrim"></div>
+
+  <div class="arrival__index">
+    <span class="arrival__index-num">01</span>
+    <span class="arrival__index-label">The Arrival</span>
+  </div>
+
+  <div class="arrival__content">
+
+    <h1 class="arrival__heading">
+      <span class="arrival__line">A Private</span>
+      <span class="arrival__line">Retreat</span>
+      <span class="arrival__line">Above The</span>
+      <span class="arrival__line">Ordinary.</span>
+    </h1>
+
+    <p class="arrival__subtext">
+      A private retreat surrounded by nature, designed for slower days and deeper moments.
+    </p>
+
+    <button
+      type="button"
+      class="arrival__cta"
+      (click)="scrollToNext()"
+    >
+      <span>Discover LUNÉ</span>
+      <span class="arrival__cta-arrow" aria-hidden="true">→</span>
+    </button>
+
+  </div>
+
+  <div class="arrival__tag">
+    <span class="arrival__tag-pin">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"
+          stroke="currentColor"
+          stroke-width="1.3"
+        />
+        <circle
+          cx="12"
+          cy="9.5"
+          r="2.2"
+          stroke="currentColor"
+          stroke-width="1.3"
+        />
+      </svg>
+    </span>
+
+    <span>Kullu Valley · Himachal Pradesh</span>
+  </div>
+
+</section>

@@ -1,0 +1,137 @@
+<section
+  #journalHero
+  class="journal-hero"
+  [class.is-visible]="isVisible"
+>
+
+  <!-- =========================================================
+       BACKGROUND IMAGE
+       ========================================================= -->
+
+  <div class="journal-hero__background">
+
+    <img
+      src="./images/journal-hero.png"
+      alt="Himalayan mountains surrounded by mist"
+    />
+
+  </div>
+
+
+  <!-- =========================================================
+       DARK OVERLAY
+       ========================================================= -->
+
+  <div class="journal-hero__overlay"></div>
+
+
+  <!-- =========================================================
+       TOP LABEL
+       ========================================================= -->
+
+  <div class="journal-hero__label">
+
+    <span>01</span>
+
+    <i></i>
+
+    <span>JOURNAL</span>
+
+  </div>
+
+
+  <!-- =========================================================
+       MAIN CONTENT
+       ========================================================= -->
+
+  <div class="journal-hero__content">
+
+    <p class="journal-hero__eyebrow">
+      STORIES FROM THE MOUNTAINS
+    </p>
+
+
+    <h1>
+      Stories from
+      <br>
+      the <em>mountains.</em>
+    </h1>
+
+
+    <p class="journal-hero__description">
+      Journeys, people and places that inspire
+      slow travel, deeper connections and a
+      different way of seeing the Himalayas.
+    </p>
+
+
+    <button
+      type="button"
+      class="journal-hero__explore"
+      (click)="scrollToStories()"
+    >
+
+      <span>EXPLORE THE JOURNAL</span>
+
+      <span class="journal-hero__arrow">
+        ↗
+      </span>
+
+    </button>
+
+  </div>
+
+
+  <!-- =========================================================
+       RIGHT SIDE DECORATIVE MARK
+       ========================================================= -->
+
+  <div class="journal-hero__mark">
+
+    <span class="journal-hero__mark-word">
+      LUNÉ
+    </span>
+
+    <span class="journal-hero__mark-line"></span>
+
+    <span class="journal-hero__mark-caption">
+      TRAVEL · PLACE · PEOPLE
+    </span>
+
+  </div>
+
+
+  <!-- =========================================================
+       SCROLL INDICATOR
+       ========================================================= -->
+
+  <button
+    type="button"
+    class="journal-hero__scroll"
+    (click)="scrollToStories()"
+  >
+
+    <span>SCROLL TO EXPLORE</span>
+
+    <i>↓</i>
+
+  </button>
+
+
+  <!-- =========================================================
+       BOTTOM META
+       ========================================================= -->
+
+  <div class="journal-hero__bottom">
+
+    <span>
+      LUNÉ JOURNAL
+    </span>
+
+    <span>
+      STORIES FROM THE HIMALAYAS
+    </span>
+
+  </div>
+
+</section>

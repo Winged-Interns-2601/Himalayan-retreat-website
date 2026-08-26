@@ -1,0 +1,719 @@
+<!-- ============================================================
+     JOURNAL CONTENT
+============================================================ -->
+
+<section class="journal-content">
+
+
+  <!-- ==========================================================
+       SECTION HEADER
+  ========================================================== -->
+
+  <div class="journal-content__header">
+
+    <div class="journal-content__label">
+
+      <span>02</span>
+
+      <i></i>
+
+      <span>THE JOURNAL</span>
+
+    </div>
+
+
+    <div class="journal-content__intro">
+
+      <h2>
+        Stories worth
+        <em>staying for.</em>
+      </h2>
+
+      <p>
+        A collection of journeys, people, places and
+        quiet moments from the Himalayas.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================================
+       FILTER + SEARCH
+  ========================================================== -->
+
+  <div class="journal-content__tools">
+
+
+    <!-- CATEGORY FILTER -->
+
+    <div class="journal-content__categories">
+
+      <button
+        *ngFor="let category of categories"
+        type="button"
+        [class.active]="activeCategory === category"
+        (click)="selectCategory(category)"
+      >
+        {{ category }}
+      </button>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="journal-content__search">
+
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        placeholder="Search stories"
+        aria-label="Search stories"
+      />
+
+      <span>⌕</span>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================================
+       STORY GRID
+  ========================================================== -->
+
+  <div class="journal-content__grid">
+
+
+    <article
+      class="journal-story"
+      *ngFor="
+        let story of filteredStories;
+        let i = index
+      "
+      [class.journal-story--large]="i === 0"
+    >
+
+      <a
+        href="#"
+        class="journal-story__link"
+        (click)="openStory(story); $event.preventDefault()"
+      >
+
+
+        <!-- IMAGE -->
+
+        <div
+          class="journal-story__image"
+        >
+
+          <img
+            [src]="story.image"
+            [alt]="story.title"
+            loading="lazy"
+          />
+
+          <span class="journal-story__number">
+            0{{ i + 1 }}
+          </span>
+
+          <span class="journal-story__view">
+            ↗
+          </span>
+
+        </div>
+
+
+        <!-- DETAILS -->
+
+        <div class="journal-story__details">
+
+
+          <div class="journal-story__meta">
+
+            <span>
+              {{ story.category }}
+            </span>
+
+            <i></i>
+
+            <span>
+              {{ story.readTime }}
+            </span>
+
+          </div>
+
+
+          <h3>
+            {{ story.title }}
+          </h3>
+
+
+          <p>
+            {{ story.description }}
+          </p>
+
+
+          <div class="journal-story__date">
+            {{ story.date }}
+          </div>
+
+        </div>
+
+      </a>
+
+    </article>
+
+  </div>
+
+
+  <!-- ==========================================================
+       EMPTY STATE
+  ========================================================== -->
+
+  <div
+    class="journal-content__empty"
+    *ngIf="filteredStories.length === 0"
+  >
+
+    <span>
+      No stories found.
+    </span>
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ============================================================
+     SECTION 03 — FEATURED STORY
+============================================================ -->
+
+<section class="journal-featured">
+
+
+  <!-- ATMOSPHERIC BACKGROUND -->
+
+  <div class="journal-featured__background">
+
+    <div class="journal-featured__grain"></div>
+
+  </div>
+
+
+  <!-- SECTION LABEL -->
+
+  <div class="journal-featured__label">
+
+    <span>03</span>
+
+    <i></i>
+
+    <span>FEATURED STORY</span>
+
+  </div>
+
+
+  <!-- LARGE GHOST TEXT -->
+
+  <div class="journal-featured__ghost">
+    TIRTHAN
+  </div>
+
+
+  <!-- MAIN IMAGE -->
+
+  <div class="journal-featured__image-wrap">
+
+    <div class="journal-featured__image">
+
+      <img
+        [src]="featuredStory.image"
+        [alt]="featuredStory.title"
+        loading="lazy"
+      />
+
+      <div class="journal-featured__image-overlay"></div>
+
+    </div>
+
+
+    <span class="journal-featured__image-number">
+      01 / 04
+    </span>
+
+  </div>
+
+
+  <!-- STORY CONTENT -->
+
+  <div class="journal-featured__content">
+
+
+    <div class="journal-featured__meta">
+
+      <span>
+        {{ featuredStory.category }}
+      </span>
+
+      <i></i>
+
+      <span>
+        {{ featuredStory.readTime }}
+      </span>
+
+    </div>
+
+
+    <h2>
+      The hidden
+      <br>
+      <em>valleys</em>
+      <br>
+      of Tirthan.
+    </h2>
+
+
+    <p>
+      {{ featuredStory.description }}
+    </p>
+
+
+    <button
+      type="button"
+      class="journal-featured__read"
+      (click)="openFeaturedStory()"
+    >
+
+      <span>
+        READ THE STORY
+      </span>
+
+      <span class="journal-featured__read-arrow">
+        ↗
+      </span>
+
+    </button>
+
+  </div>
+
+
+  <!-- SIDE DETAILS -->
+
+  <div class="journal-featured__side">
+
+    <span class="journal-featured__side-line"></span>
+
+    <span>
+      {{ featuredStory.location }}
+    </span>
+
+    <span>
+      {{ featuredStory.coordinates }}
+    </span>
+
+  </div>
+
+
+  <!-- QUOTE -->
+
+  <div class="journal-featured__quote">
+
+    <span class="journal-featured__quote-mark">
+      “
+    </span>
+
+    <p>
+      Some places ask you to arrive slowly.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     SECTION 04 — LATEST STORIES
+============================================================ -->
+
+<section class="journal-latest">
+
+
+  <!-- SECTION HEADER -->
+
+  <div class="journal-latest__header">
+
+    <div class="journal-latest__label">
+
+      <span>04</span>
+
+      <i></i>
+
+      <span>LATEST STORIES</span>
+
+    </div>
+
+
+    <div class="journal-latest__heading">
+
+      <h2>
+        Latest
+        <em>journeys.</em>
+      </h2>
+
+      <button
+        type="button"
+        class="journal-latest__view-all"
+      >
+        <span>
+          VIEW ALL STORIES
+        </span>
+
+        <span>
+          ↗
+        </span>
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- STORY INDEX -->
+
+  <div class="journal-latest__list">
+
+
+    <article
+      class="journal-latest__item"
+      *ngFor="
+        let story of latestStories;
+        let i = index
+      "
+      (click)="openLatestStory(story)"
+      tabindex="0"
+      role="button"
+      [attr.aria-label]="'Read ' + story.title"
+    >
+
+
+      <!-- NUMBER -->
+
+      <div class="journal-latest__number">
+
+        <span>
+          0{{ i + 1 }}
+        </span>
+
+      </div>
+
+
+      <!-- IMAGE -->
+
+      <div class="journal-latest__image">
+
+        <img
+          [src]="story.image"
+          [alt]="story.title"
+          loading="lazy"
+        />
+
+      </div>
+
+
+      <!-- STORY INFORMATION -->
+
+      <div class="journal-latest__info">
+
+
+        <div class="journal-latest__meta">
+
+          <span>
+            {{ story.category }}
+          </span>
+
+          <i></i>
+
+          <span>
+            {{ story.readTime }}
+          </span>
+
+        </div>
+
+
+        <h3>
+          {{ story.title }}
+        </h3>
+
+
+        <p>
+          {{ story.description }}
+        </p>
+
+
+      </div>
+
+
+      <!-- DATE -->
+
+      <div class="journal-latest__date">
+
+        {{ story.date }}
+
+      </div>
+
+
+      <!-- ARROW -->
+
+      <div class="journal-latest__arrow">
+
+        ↗
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+
+  <!-- BOTTOM LINE -->
+
+  <div class="journal-latest__footer">
+
+    <span>
+      FOUR STORIES · ONE MOUNTAIN
+    </span>
+
+    <span>
+      LUNÉ JOURNAL
+    </span>
+
+  </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     FULL SCREEN JOURNAL READER
+============================================================ -->
+
+<div
+  class="journal-reader"
+  *ngIf="selectedStory as story"
+>
+
+
+  <!-- ==========================================================
+       CLOSE BUTTON
+  ========================================================== -->
+
+  <button
+    type="button"
+    class="journal-reader__close"
+    (click)="closeStory()"
+    aria-label="Close journal"
+  >
+
+    <span></span>
+
+    <span></span>
+
+  </button>
+
+
+
+  <!-- ==========================================================
+       SCROLLABLE READER
+  ========================================================== -->
+
+  <div class="journal-reader__scroll">
+
+
+    <!-- ========================================================
+         TOP META
+    ======================================================== -->
+
+    <div class="journal-reader__top">
+
+      <span class="journal-reader__eyebrow">
+        {{ story.category }}
+      </span>
+
+      <span class="journal-reader__meta">
+        {{ story.readTime }}
+      </span>
+
+    </div>
+
+
+
+    <!-- ========================================================
+         ARTICLE HEADING
+    ======================================================== -->
+
+    <div class="journal-reader__heading">
+
+      <h1>
+        {{ story.title }}
+      </h1>
+
+      <p>
+        {{ story.description }}
+      </p>
+
+    </div>
+
+
+
+    <!-- ========================================================
+         ARTICLE IMAGE
+    ======================================================== -->
+
+    <div class="journal-reader__image">
+
+      <img
+        [src]="story.image"
+        [alt]="story.title"
+      />
+
+    </div>
+
+
+
+    <!-- ========================================================
+         ARTICLE CONTENT
+    ======================================================== -->
+
+    <article class="journal-reader__article">
+
+
+      <!-- ARTICLE META -->
+
+      <div class="journal-reader__article-meta">
+
+        <span>
+          {{ story.date }}
+        </span>
+
+        <span>
+          LUNÉ JOURNAL
+        </span>
+
+      </div>
+
+
+
+      <!-- INTRO -->
+
+      <p>
+        Beyond the familiar mountain roads lies a quieter
+        Himalaya — where cedar forests, clear rivers and
+        small villages still move at their own pace.
+      </p>
+
+
+      <!-- BODY -->
+
+      <p>
+        Some places are not meant to be rushed through.
+        They ask you to stay a little longer, to notice the
+        changing light across the mountains and listen to
+        the sounds that disappear when life becomes too loud.
+      </p>
+
+
+      <!-- PULL QUOTE -->
+
+      <blockquote>
+        “Some places ask you to arrive slowly.”
+      </blockquote>
+
+
+      <!-- BODY -->
+
+      <p>
+        The trails here lead through forests, valleys and
+        small mountain settlements where everyday life still
+        follows the rhythm of the landscape.
+      </p>
+
+
+      <p>
+        The mornings begin quietly. Mist settles between
+        the trees while the first light reaches the higher
+        ridges. There is very little that demands your
+        attention, and that is precisely what makes the
+        valley special.
+      </p>
+
+
+      <p>
+        Spend an afternoon following a forest trail, stop
+        beside the river, or simply sit outside and listen
+        to the landscape. The experience is less about
+        seeing everything and more about allowing yourself
+        to stay present.
+      </p>
+
+
+      <blockquote>
+        “Perhaps the real luxury is having nowhere else to be.”
+      </blockquote>
+
+
+      <p>
+        Perhaps that is the real luxury of the mountains:
+        not having more, but needing less.
+      </p>
+
+
+      <p>
+        Take the long way. Stay for another morning.
+        Let the landscape reveal itself slowly.
+      </p>
+
+
+    </article>
+
+
+
+    <!-- ========================================================
+         ARTICLE END
+    ======================================================== -->
+
+    <div class="journal-reader__bottom">
+
+      <span>
+        END OF STORY
+      </span>
+
+
+      <button
+        type="button"
+        (click)="closeStory()"
+      >
+
+        <span>
+          BACK TO JOURNAL
+        </span>
+
+        <span>
+          ↗
+        </span>
+
+      </button>
+
+    </div>
+
+
+  </div>
+
+</div>

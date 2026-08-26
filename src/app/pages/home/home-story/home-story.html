@@ -1,0 +1,491 @@
+<section id="reveal" #revealSection class="reveal theme-light" [class.is-visible]="isVisible">
+  <div class="reveal__text">
+    <div class="reveal__index" aria-hidden="true">
+      <span class="reveal__index-num">02</span>
+      <span class="reveal__index-label">The Reveal</span>
+    </div>
+
+    <svg
+      class="reveal__branch"
+      aria-hidden="true"
+      viewBox="0 0 220 340"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path class="reveal__branch-path" d="M110 10 C 108 90, 112 160, 110 330" stroke="currentColor" stroke-width="1" />
+      <path class="reveal__branch-path" d="M110 60 C 90 50, 68 55, 52 40" stroke="currentColor" stroke-width="1" />
+      <path class="reveal__branch-path" d="M110 120 C 132 108, 152 112, 168 96" stroke="currentColor" stroke-width="1" />
+      <path class="reveal__branch-path" d="M110 180 C 88 172, 66 178, 48 164" stroke="currentColor" stroke-width="1" />
+      <path class="reveal__branch-path" d="M110 240 C 130 230, 150 236, 166 222" stroke="currentColor" stroke-width="1" />
+      <ellipse class="reveal__branch-leaf" cx="52" cy="34" rx="14" ry="7" transform="rotate(-24 52 34)" stroke="currentColor" stroke-width="1" />
+      <ellipse class="reveal__branch-leaf" cx="168" cy="90" rx="14" ry="7" transform="rotate(18 168 90)" stroke="currentColor" stroke-width="1" />
+      <ellipse class="reveal__branch-leaf" cx="48" cy="158" rx="14" ry="7" transform="rotate(-18 48 158)" stroke="currentColor" stroke-width="1" />
+      <ellipse class="reveal__branch-leaf" cx="166" cy="216" rx="14" ry="7" transform="rotate(20 166 216)" stroke="currentColor" stroke-width="1" />
+    </svg>
+
+    <p class="reveal__statement">
+      <span class="reveal__line">Luxury isn&rsquo;t</span>
+      <span class="reveal__line">about more.</span>
+      <span class="reveal__line">It&rsquo;s about what</span>
+      <span class="reveal__line">remains when</span>
+      <span class="reveal__line">everything</span>
+      <span class="reveal__line">unnecessary</span>
+      <span class="reveal__line">disappears.</span>
+    </p>
+  </div>
+
+  <div class="reveal__media">
+    <div class="reveal__media-frame">
+      <img
+        class="reveal__img"
+        src="https://images.unsplash.com/photo-1765871319901-0aaafe3f1a2a?q=80&w=2200&auto=format&fit=crop"
+        alt="Misty forested mountain valley at dawn near LUNÉ"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- ================= Section 03 — The Architecture ================= -->
+
+<section
+  id="philosophy"
+  #philosophySection
+  class="architecture theme-dark"
+  [class.is-visible]="isPhilosophyVisible"
+>
+  <!-- LEFT SECTION INDEX -->
+
+  <aside class="architecture__rail">
+    <span class="architecture__rail-number">03</span>
+
+    <span class="architecture__rail-label">
+      THE<br />
+      ARCHITECTURE
+    </span>
+  </aside>
+
+
+  <!-- SUITE SELECTOR -->
+
+  <div class="architecture__selector">
+
+    <button
+      type="button"
+      class="architecture__suite-option"
+      [class.is-active]="activeSuite === 0"
+      (click)="selectSuite(0)"
+    >
+      <span class="architecture__suite-number">01</span>
+      <span class="architecture__suite-name">The Moon Suite</span>
+    </button>
+
+
+    <button
+      type="button"
+      class="architecture__suite-option"
+      [class.is-active]="activeSuite === 1"
+      (click)="selectSuite(1)"
+    >
+      <span class="architecture__suite-number">02</span>
+      <span class="architecture__suite-name">Forest Room</span>
+    </button>
+
+
+    <button
+      type="button"
+      class="architecture__suite-option"
+      [class.is-active]="activeSuite === 2"
+      (click)="selectSuite(2)"
+    >
+      <span class="architecture__suite-number">03</span>
+      <span class="architecture__suite-name">Sky Villa</span>
+    </button>
+
+  </div>
+
+
+  <!-- MAIN IMAGE -->
+
+  <div class="architecture__main-image">
+
+    <div
+      class="architecture__image-frame"
+      #philosophyHeading
+    >
+      <img
+        class="architecture__image"
+        [src]="suites[activeSuite].mainImage"
+        [alt]="suites[activeSuite].name"
+        [class.is-changing]="isSuiteChanging"
+      />
+    </div>
+
+  </div>
+
+
+  <!-- DETAILS -->
+
+  <div class="architecture__details">
+
+    <div class="architecture__details-inner">
+
+      <span class="architecture__eyebrow">
+        {{ suites[activeSuite].category }}
+      </span>
+
+      <h2 class="architecture__title">
+        {{ suites[activeSuite].name }}
+      </h2>
+
+      <div class="architecture__specs">
+
+        <span>{{ suites[activeSuite].size }}</span>
+        <span>{{ suites[activeSuite].bed }}</span>
+        <span>{{ suites[activeSuite].feature }}</span>
+        <span>{{ suites[activeSuite].view }}</span>
+
+      </div>
+
+
+      <button
+        type="button"
+        class="architecture__explore"
+        (click)="exploreSuite()"
+      >
+        <span>Explore Suite</span>
+
+        <span
+          class="architecture__explore-arrow"
+          aria-hidden="true"
+        >
+          &#8594;
+        </span>
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- SECONDARY IMAGE -->
+
+  <figure
+    class="architecture__secondary"
+    #philosophyMedia
+  >
+
+    <div class="architecture__secondary-frame">
+
+      <img
+        [src]="suites[activeSuite].secondaryImage"
+        [alt]="suites[activeSuite].name + ' interior'"
+        class="architecture__secondary-image"
+      />
+
+    </div>
+
+  </figure>
+
+
+  <!-- BOTTOM SCROLL CUE -->
+
+  <div class="architecture__scroll">
+
+    <span class="architecture__scroll-label">
+      Scroll to explore
+    </span>
+
+    <span
+      class="architecture__scroll-line"
+      aria-hidden="true"
+    ></span>
+
+    <span
+      class="architecture__scroll-arrow"
+      aria-hidden="true"
+    >
+      ↓
+    </span>
+
+  </div>
+
+</section>
+
+<!-- =============== end Section 03 — The Architecture =============== -->
+
+<!-- ========================================================= -->
+<!-- SECTION 04 — A DAY AT LUNÉ -->
+<!-- ========================================================= -->
+
+<section
+  id="day"
+  #daySection
+  class="day theme-dark"
+  [class.is-visible]="isDayVisible"
+>
+
+  <!-- LEFT SECTION RAIL -->
+
+  <aside class="day__rail">
+
+    <span class="day__rail-number">
+      04
+    </span>
+
+    <span class="day__rail-label">
+      A DAY<br />
+      AT LUNÉ
+    </span>
+
+  </aside>
+
+
+  <!-- MAIN CONTENT -->
+
+  <div class="day__content">
+
+    <!-- SECTION HEADER -->
+
+    <div class="day__header">
+
+      <span class="day__eyebrow">
+        04 / A DAY AT LUNÉ
+      </span>
+
+      <h2 class="day__title">
+        A day shaped<br />
+        by stillness.
+      </h2>
+
+    </div>
+
+
+    <!-- TIMELINE -->
+
+    <div class="day__timeline">
+
+      <div
+        class="day__timeline-line"
+        aria-hidden="true"
+      >
+        <span
+          class="day__timeline-progress"
+          [style.width.%]="dayProgress"
+        ></span>
+      </div>
+
+
+      <div class="day__moments">
+
+        <article
+          class="day__moment"
+          *ngFor="let moment of dayMoments; let i = index"
+          [class.is-active]="activeMoment === i"
+          (mouseenter)="setActiveMoment(i)"
+        >
+
+          <!-- TIME -->
+
+          <div class="day__moment-meta">
+
+            <span class="day__moment-time">
+              {{ moment.time }}
+            </span>
+
+            <span class="day__moment-name">
+              {{ moment.name }}
+            </span>
+
+          </div>
+
+
+          <!-- TIMELINE DOT -->
+
+          <span
+            class="day__moment-dot"
+            aria-hidden="true"
+          ></span>
+
+
+          <!-- IMAGE -->
+
+          <figure class="day__moment-image">
+
+            <div class="day__moment-frame">
+
+              <img
+                [src]="moment.image"
+                [alt]="moment.alt"
+                loading="lazy"
+              />
+
+            </div>
+
+            <figcaption>
+              {{ moment.caption }}
+            </figcaption>
+
+          </figure>
+
+        </article>
+
+      </div>
+
+    </div>
+
+
+    <!-- BOTTOM STATEMENT -->
+
+    <div class="day__footer">
+
+      <span class="day__footer-line"></span>
+
+      <p>
+        From first light to the last fire,
+        every hour belongs to you.
+      </p>
+
+      <span class="day__footer-location">
+        KULLU VALLEY · HIMACHAL PRADESH
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================================================= -->
+<!-- END SECTION 04 -->
+<!-- ========================================================= -->
+
+
+<!-- =====================================================
+     SECTION 05 — THE LANDSCAPE
+===================================================== -->
+
+<section
+  id="landscape"
+  #landscapeSection
+  class="landscape"
+  [class.is-visible]="isLandscapeVisible"
+>
+
+  <!-- CINEMATIC IMAGE -->
+
+  <div class="landscape__media">
+
+    <img
+      #landscapeImage
+      class="landscape__img"
+      src="/images/kullu-valley.png"
+      alt="Himalayan mountain landscape surrounding LUNÉ"
+      loading="lazy"
+    />
+
+    <div
+      #landscapeMist
+      class="landscape__mist"
+      aria-hidden="true"
+    ></div>
+
+  </div>
+
+
+  <!-- DARK CINEMATIC OVERLAY -->
+
+  <div
+    class="landscape__scrim"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- LEFT SECTION RAIL -->
+
+  <aside class="landscape__rail">
+
+    <span class="landscape__rail-number">
+      05
+    </span>
+
+    <span class="landscape__rail-label">
+      THE<br />
+      LANDSCAPE
+    </span>
+
+  </aside>
+
+
+  <!-- MAIN CONTENT -->
+
+  <div class="landscape__content">
+
+    <span class="landscape__eyebrow">
+      KULLU VALLEY
+    </span>
+
+    <h2 class="landscape__title">
+      <span>Far From</span>
+      <span>Ordinary.</span>
+    </h2>
+
+    <div class="landscape__location">
+
+      <span class="landscape__location-pin">
+        ◉
+      </span>
+
+      <div>
+        <span class="landscape__location-name">
+          Kullu Valley
+        </span>
+
+        <span class="landscape__location-state">
+          Himachal Pradesh
+        </span>
+      </div>
+
+    </div>
+
+    <div class="landscape__coordinates">
+      31.9578° N &nbsp;·&nbsp; 77.1095° E
+    </div>
+
+  </div>
+
+
+  <!-- DECORATIVE ROUTE -->
+
+  <svg
+    class="landscape__route"
+    viewBox="0 0 900 260"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+
+    <path
+      d="M20 220
+         C130 185 160 215 260 175
+         C350 140 390 170 470 125
+         C550 80 600 125 675 90
+         C760 50 800 75 880 25"
+    />
+
+  </svg>
+
+
+  <!-- LOCATION MARKER -->
+
+  <div
+    class="landscape__marker"
+    aria-hidden="true"
+  >
+    <span></span>
+  </div>
+
+</section>
+
+<!-- =====================================================
+     END SECTION 05
+===================================================== -->

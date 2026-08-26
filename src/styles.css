@@ -1,1 +1,187 @@
 /* You can add global styles to this file, and also import other style files */
+/* =========================================================
+   LUNÉ — GLOBAL DESIGN SYSTEM
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap');
+
+:root {
+  /* -------------------------
+     COLORS
+     ------------------------- */
+
+  --c-charcoal: #0b0c0a;
+  --c-charcoal-soft: #141512;
+
+  --c-ivory: #f4efe4;
+  --c-ivory-soft: #e9e1d3;
+
+  --c-champagne: #b99a63;
+  --c-champagne-dim: rgba(185, 154, 99, 0.55);
+
+  --c-forest: #26352d;
+
+  --c-stone: #a8a095;
+
+  --c-text-on-dark: #f4efe4;
+  --c-text-on-dark-muted: rgba(244, 239, 228, 0.68);
+
+  --c-text-on-light: #0b0c0a;
+  --c-text-on-light-muted: rgba(11, 12, 10, 0.62);
+
+  --c-hairline-dark: rgba(244, 239, 228, 0.16);
+  --c-hairline-light: rgba(11, 12, 10, 0.14);
+
+
+  /* -------------------------
+     TYPOGRAPHY
+     ------------------------- */
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', Arial, sans-serif;
+
+  --fs-display-xl: clamp(3.8rem, 8vw, 8.5rem);
+  --fs-display-lg: clamp(3rem, 6vw, 6rem);
+  --fs-display-md: clamp(2.2rem, 4vw, 4rem);
+
+  --fs-body-lg: clamp(1rem, 1.3vw, 1.2rem);
+  --fs-body: 1rem;
+
+  --fs-label: 0.68rem;
+  --fs-caption: 0.62rem;
+
+  --tracking-label: 0.16em;
+  --tracking-wide: 0.12em;
+
+
+  /* -------------------------
+     SPACING
+     ------------------------- */
+
+  --space-gutter: clamp(1.25rem, 5vw, 5rem);
+
+  --space-section: clamp(5rem, 12vw, 11rem);
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+
+
+  /* -------------------------
+     MOTION
+     ------------------------- */
+
+  --dur-fast: 240ms;
+  --dur-med: 500ms;
+  --dur-slow: 900ms;
+
+  --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+
+
+  /* -------------------------
+     LAYOUT
+     ------------------------- */
+
+  --content-width: 1400px;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--c-charcoal);
+}
+
+body {
+  margin: 0;
+  background: var(--c-charcoal);
+  color: var(--c-ivory);
+  font-family: var(--font-body);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--c-champagne);
+  color: var(--c-charcoal);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+:focus-visible {
+  outline: 1px solid var(--c-champagne);
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   GLOBAL PAGE HELPERS
+   ========================================================= */
+
+main {
+  position: relative;
+}
+
+.page-section {
+  position: relative;
+  width: 100%;
+}
+
+.container {
+  width: min(100% - (var(--space-gutter) * 2), var(--content-width));
+  margin-inline: auto;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+  :root {
+    --space-gutter: 1.25rem;
+    --fs-label: 0.64rem;
+    --fs-caption: 0.58rem;
+  }
+}

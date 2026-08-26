@@ -1,0 +1,61 @@
+<!-- Section 10 — Footer -->
+<footer id="footer" class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <span class="footer__eyebrow">LUNÉ</span>
+
+      <h2 class="footer__title">
+        Stay a little<br />
+        longer.
+      </h2>
+
+      <p class="footer__copy">
+        A quiet retreat in the Himalayas, created for slower days,
+        meaningful journeys and memories worth keeping.
+      </p>
+
+      <a class="footer__cta" routerLink="/contact">
+        Begin Your Journey
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <nav class="footer__links" aria-label="Footer navigation">
+      <div class="footer__column">
+        <span class="footer__label">Explore</span>
+        <a routerLink="/stay">The Stay</a>
+        <a routerLink="/experiences">Experiences</a>
+        <a routerLink="/gallery">Gallery</a>
+        <a routerLink="/journal">Journal</a>
+      </div>
+
+      <div class="footer__column">
+        <span class="footer__label">LUNÉ</span>
+        <a routerLink="/about">Our Story</a>
+        <a routerLink="/contact">Contact</a>
+      </div>
+
+      <div class="footer__column">
+        <span class="footer__label">Find Us</span>
+        <span>Himalayas</span>
+        <span>India</span>
+      </div>
+    </nav>
+  </div>
+
+  <div class="footer__bottom">
+    <span>© {{ currentYear }} LUNÉ Retreat</span>
+
+    <span class="footer__bottom-center">
+      Crafted for slower living
+    </span>
+
+    <button
+      type="button"
+      class="footer__top-btn"
+      (click)="scrollToTop()"
+    >
+      Back to top ↑
+    </button>
+  </div>
+</footer>

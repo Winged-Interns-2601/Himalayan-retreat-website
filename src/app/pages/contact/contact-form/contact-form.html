@@ -1,0 +1,150 @@
+<form
+  class="lune-form"
+  (ngSubmit)="sendEnquiry()"
+  #contactForm="ngForm"
+>
+
+  <!-- NAME + EMAIL -->
+
+  <div class="form-row">
+
+    <div class="form-field">
+
+      <label for="name">
+        YOUR NAME
+      </label>
+
+      <input
+        id="name"
+        type="text"
+        name="name"
+        [(ngModel)]="formData.name"
+        placeholder="Enter your name"
+        required
+      >
+
+    </div>
+
+
+    <div class="form-field">
+
+      <label for="email">
+        EMAIL ADDRESS
+      </label>
+
+      <input
+        id="email"
+        type="email"
+        name="email"
+        [(ngModel)]="formData.email"
+        placeholder="you@example.com"
+        required
+      >
+
+    </div>
+
+  </div>
+
+
+  <!-- PHONE + SUBJECT -->
+
+  <div class="form-row">
+
+    <div class="form-field">
+
+      <label for="phone">
+        PHONE NUMBER
+      </label>
+
+      <input
+        id="phone"
+        type="tel"
+        name="phone"
+        [(ngModel)]="formData.phone"
+        placeholder="+91 00000 00000"
+      >
+
+    </div>
+
+
+    <div class="form-field">
+
+      <label for="subject">
+        WHAT CAN WE HELP YOU WITH?
+      </label>
+
+      <select
+        id="subject"
+        name="subject"
+        [(ngModel)]="formData.subject"
+        required
+      >
+
+        <option
+          value=""
+          disabled
+        >
+          Select an option
+        </option>
+
+        <option value="stay">
+          Plan a stay
+        </option>
+
+        <option value="experience">
+          Private experience
+        </option>
+
+        <option value="retreat">
+          Group / retreat
+        </option>
+
+        <option value="general">
+          General enquiry
+        </option>
+
+      </select>
+
+    </div>
+
+  </div>
+
+
+  <!-- MESSAGE -->
+
+  <div class="form-field message-field">
+
+    <label for="message">
+      MESSAGE
+    </label>
+
+    <textarea
+      id="message"
+      name="message"
+      [(ngModel)]="formData.message"
+      placeholder="Tell us more about your enquiry..."
+      rows="6"
+      required
+    ></textarea>
+
+  </div>
+
+
+  <!-- SUBMIT -->
+
+  <div class="submit-area">
+
+    <button
+      type="submit"
+      [disabled]="!contactForm.valid"
+    >
+
+      SEND ENQUIRY
+
+      <span>→</span>
+
+    </button>
+
+  </div>
+
+</form>

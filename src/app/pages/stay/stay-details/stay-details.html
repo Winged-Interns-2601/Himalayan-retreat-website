@@ -1,0 +1,216 @@
+<section
+  #philosophySection
+  class="philosophy"
+  [class.is-visible]="isPhilosophyVisible"
+>
+  <div class="philosophy__paper">
+    <div class="philosophy__tape"></div>
+
+    <div class="philosophy__content">
+      <span class="philosophy__eyebrow">02 <i></i> PHILOSOPHY</span>
+
+      <h2>Where time<br />takes a pause.</h2>
+
+      <p>
+        Wake up to mountains. Spend your afternoons with no agenda.
+        Return to warmth, silence, and the feeling that time has finally
+        slowed down.
+      </p>
+
+      <a class="philosophy__link" routerLink="/about">
+        OUR STORY <span>→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="philosophy__image">
+    <img
+      src="./images/stay-philosophy.png"
+      alt="Quiet mountain retreat interior"
+      loading="lazy"
+    />
+  </div>
+</section>
+
+<section
+  #residenceSection
+  class="residence"
+  [class.is-visible]="isResidenceVisible"
+>
+  <div class="residence__image">
+    <img
+      src="./images/stay-residence.png"
+      alt="The LUNÉ mountain residence"
+      loading="lazy"
+    />
+    <div class="residence__image-label">03 / THE RESIDENCE</div>
+  </div>
+
+  <div class="residence__content">
+    <span class="residence__eyebrow">03 <i></i> THE RESIDENCE</span>
+
+    <h2>The Residence</h2>
+
+    <p>
+      A private mountain retreat designed around light, silence and the
+      landscape. Every room opens towards the mountains.
+    </p>
+
+    <div class="residence__facts">
+      <div>
+        <span class="residence__icon">♙</span>
+        <strong>02</strong>
+        <small>GUESTS</small>
+      </div>
+      <div>
+        <span class="residence__icon">▱</span>
+        <strong>01</strong>
+        <small>BEDROOM</small>
+      </div>
+      <div>
+        <span class="residence__icon">⌂</span>
+        <strong>01</strong>
+        <small>BATH</small>
+      </div>
+      <div>
+        <span class="residence__icon">⌁</span>
+        <strong>∞</strong>
+        <small>MOUNTAIN VIEW</small>
+      </div>
+    </div>
+
+    <a class="residence__link" routerLink="/stay/residence">
+      VIEW THE RESIDENCE <span>→</span>
+    </a>
+  </div>
+
+  <div class="residence__polaroid">
+    <img
+      src="./images/stay-residence-detail.png"
+      alt="LUNÉ residence interior"
+      loading="lazy"
+    />
+    <span>LUNÉ / 01</span>
+  </div>
+</section>
+
+<section
+  #viewSection
+  class="view"
+  [class.is-visible]="isViewVisible"
+>
+  <div class="view__image">
+    <img
+      src="./images/stay-view.png"
+      alt="Panoramic Himalayan mountain view"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="view__overlay"></div>
+
+  <div class="view__content">
+    <span class="view__eyebrow">
+      04 <i></i> THE VIEW
+    </span>
+
+    <h2>
+      The mountains<br />
+      are part of<br />
+      the room.
+    </h2>
+
+    <span class="view__location">
+      KULLU VALLEY · HIMACHAL PRADESH
+    </span>
+  </div>
+
+  <div class="view__mark">
+    <span>PAUSE</span>
+    <span>&amp;</span>
+    <span>BREATHE</span>
+  </div>
+</section>
+
+<section
+  #spacesSection
+  class="spaces"
+  [class.is-visible]="isSpacesVisible"
+>
+  <div class="spaces__intro">
+    <span class="spaces__eyebrow">
+      05 <i></i> THE SPACES
+    </span>
+
+    <h2>
+      Made for<br />
+      lingering.
+    </h2>
+
+    <p>
+      Rooms shaped for slow mornings, long conversations and evenings
+      that don't need an ending.
+    </p>
+
+    <a
+      class="spaces__link"
+      routerLink="/stay/residence"
+    >
+      EXPLORE THE RESIDENCE
+      <span>→</span>
+    </a>
+  </div>
+
+  <div class="spaces__gallery">
+
+    <figure class="spaces__photo spaces__photo--one">
+      <div class="spaces__photo-frame">
+        <img
+          src="./images/stay-bedroom.png"
+          alt="Bedroom at LUNÉ"
+          loading="lazy"
+        />
+      </div>
+
+      <figcaption>
+        <span>01</span>
+        THE BEDROOM
+      </figcaption>
+    </figure>
+
+    <figure class="spaces__photo spaces__photo--two">
+      <div class="spaces__photo-frame">
+        <img
+          src="./images/stay-living.png"
+          alt="Living space at LUNÉ"
+          loading="lazy"
+        />
+      </div>
+
+      <figcaption>
+        <span>02</span>
+        THE LIVING SPACE
+      </figcaption>
+    </figure>
+
+    <figure class="spaces__photo spaces__photo--three">
+      <div class="spaces__photo-frame">
+        <img
+          src="./images/stay-bathroom.png"
+          alt="Bathroom at LUNÉ"
+          loading="lazy"
+        />
+      </div>
+
+      <figcaption>
+        <span>03</span>
+        THE BATH
+      </figcaption>
+    </figure>
+
+  </div>
+
+  <div class="spaces__note">
+    LUNÉ / SLOW LIVING
+  </div>
+</section>

@@ -1,0 +1,1647 @@
+/* ============================================================
+   SECTION 06 — SLOW MORNINGS
+   ============================================================ */
+
+.mornings {
+  position: relative;
+  height: 100svh;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--c-charcoal);
+  color: var(--c-ivory);
+}
+
+
+/* ============================================================
+   IMAGE
+   ============================================================ */
+
+.mornings__image {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+
+  clip-path: inset(0 0 100% 0);
+
+  transition:
+    clip-path 1.5s var(--ease-cinematic);
+}
+
+.mornings.is-visible .mornings__image {
+  clip-path: inset(0);
+}
+
+.mornings__image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transform: scale(1.08);
+
+  filter: saturate(0.88) brightness(0.78);
+
+  transition:
+    transform 2s var(--ease-cinematic);
+}
+
+.mornings.is-visible .mornings__image img {
+  transform: scale(1);
+}
+
+
+/* ============================================================
+   VEIL
+   ============================================================ */
+
+.mornings__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 9, 8, 0.72) 0%,
+      rgba(8, 9, 8, 0.42) 42%,
+      rgba(8, 9, 8, 0.08) 78%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(8, 9, 8, 0.5),
+      transparent 60%
+    );
+
+  opacity: 0;
+
+  transition:
+    opacity 1.2s ease 400ms;
+}
+
+.mornings.is-visible .mornings__veil {
+  opacity: 1;
+}
+
+
+/* ============================================================
+   CONTENT
+   ============================================================ */
+
+.mornings__content {
+  position: relative;
+  z-index: 2;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding:
+    0
+    var(--space-gutter);
+
+  max-width: 720px;
+
+  opacity: 0;
+  transform: translateY(45px);
+
+  transition:
+    opacity 900ms var(--ease-cinematic) 650ms,
+    transform 900ms var(--ease-cinematic) 650ms;
+}
+
+.mornings.is-visible .mornings__content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ============================================================
+   EYEBROW
+   ============================================================ */
+
+.mornings__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  margin-bottom: 1.5rem;
+
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: var(--c-champagne);
+}
+
+.mornings__eyebrow i {
+  width: 30px;
+  height: 1px;
+
+  background: var(--c-champagne-dim);
+}
+
+
+/* ============================================================
+   HEADING
+   ============================================================ */
+
+.mornings h2 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 6vw, 6.2rem);
+  font-weight: 400;
+
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+
+  color: var(--c-ivory);
+}
+
+
+/* ============================================================
+   DESCRIPTION
+   ============================================================ */
+
+.mornings__content > p {
+  max-width: 38ch;
+
+  margin: 1.8rem 0 2.4rem;
+
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 300;
+
+  line-height: 1.75;
+
+  color: var(--c-text-on-dark-muted);
+}
+
+
+/* ============================================================
+   MORNING RITUALS
+   ============================================================ */
+
+.mornings__rituals {
+  display: flex;
+  align-items: stretch;
+
+  width: fit-content;
+
+  border-top: 1px solid rgba(205, 171, 104, 0.28);
+  border-bottom: 1px solid rgba(205, 171, 104, 0.28);
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  transition:
+    opacity 800ms ease 1100ms,
+    transform 800ms var(--ease-cinematic) 1100ms;
+}
+
+.mornings.is-visible .mornings__rituals {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mornings__ritual {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+
+  min-width: 125px;
+
+  padding: 0.9rem 1.1rem;
+
+  border-right: 1px solid rgba(205, 171, 104, 0.15);
+}
+
+.mornings__ritual:last-child {
+  border-right: 0;
+}
+
+.mornings__ritual span {
+  font-family: var(--font-body);
+  font-size: 0.48rem;
+  letter-spacing: 0.12em;
+
+  color: var(--c-champagne-dim);
+}
+
+.mornings__ritual strong {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+
+  color: var(--c-ivory);
+}
+
+
+/* ============================================================
+   SIDE NOTE
+   ============================================================ */
+
+.mornings__note {
+  position: absolute;
+
+  right: var(--space-gutter);
+  bottom: 3rem;
+
+  z-index: 3;
+
+  writing-mode: vertical-rl;
+
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: rgba(244, 241, 232, 0.6);
+
+  opacity: 0;
+
+  transition:
+    opacity 800ms ease 1.3s;
+}
+
+.mornings.is-visible .mornings__note {
+  opacity: 1;
+}
+
+
+/* ============================================================
+   HOVER
+   ============================================================ */
+
+.mornings:hover .mornings__image img {
+  transform: scale(1.025);
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 800px) {
+
+  .mornings {
+    height: 100svh;
+    min-height: 100svh;
+  }
+
+  .mornings__content {
+    justify-content: flex-end;
+
+    padding:
+      0
+      var(--space-gutter)
+      6rem;
+  }
+
+  .mornings h2 {
+    font-size: clamp(3rem, 13vw, 5rem);
+  }
+
+  .mornings__rituals {
+    width: 100%;
+  }
+
+  .mornings__ritual {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .mornings__note {
+    display: none;
+  }
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 520px) {
+
+  .mornings__content {
+    padding-bottom: 4rem;
+  }
+
+  .mornings__content > p {
+    font-size: 0.75rem;
+    margin: 1.4rem 0 1.8rem;
+  }
+
+  .mornings__ritual {
+    padding: 0.75rem 0.55rem;
+  }
+
+  .mornings__ritual strong {
+    font-size: 0.52rem;
+  }
+}
+
+/* ============================================================
+   SECTION 07 — WHAT'S INCLUDED
+   ============================================================ */
+
+.included {
+  position: relative;
+
+  min-height: 100svh;
+
+  display: grid;
+  grid-template-columns: 38% 62%;
+  align-items: center;
+
+  overflow: hidden;
+
+  padding: clamp(4rem, 7vw, 7rem)
+           var(--space-gutter);
+
+  background: #0c0d0c;
+  color: var(--c-ivory);
+}
+
+
+/* ============================================================
+   SUBTLE BACKGROUND
+   ============================================================ */
+
+.included::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 78% 50%,
+      rgba(170, 142, 91, 0.08),
+      transparent 35%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   INTRO
+   ============================================================ */
+
+.included__intro {
+  position: relative;
+  z-index: 2;
+
+  max-width: 430px;
+
+  opacity: 0;
+  transform: translateY(40px);
+
+  transition:
+    opacity 900ms var(--ease-cinematic),
+    transform 900ms var(--ease-cinematic);
+}
+
+.included.is-visible .included__intro {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ============================================================
+   EYEBROW
+   ============================================================ */
+
+.included__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  margin-bottom: 1.5rem;
+
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: var(--c-champagne);
+}
+
+.included__eyebrow i {
+  width: 30px;
+  height: 1px;
+
+  background: var(--c-champagne-dim);
+}
+
+
+/* ============================================================
+   HEADING
+   ============================================================ */
+
+.included h2 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 4.5vw, 5rem);
+
+  font-weight: 400;
+  line-height: 0.94;
+
+  letter-spacing: -0.03em;
+}
+
+
+/* ============================================================
+   DESCRIPTION
+   ============================================================ */
+
+.included__intro p {
+  max-width: 35ch;
+
+  margin: 1.7rem 0 2rem;
+
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+
+  line-height: 1.75;
+
+  color: var(--c-text-on-dark-muted);
+}
+
+
+/* ============================================================
+   LINK
+   ============================================================ */
+
+.included__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding-bottom: 0.65rem;
+
+  border-bottom: 1px solid var(--c-champagne);
+
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  color: var(--c-ivory);
+
+  text-decoration: none;
+
+  transition:
+    gap 300ms ease,
+    color 300ms ease;
+}
+
+.included__link:hover {
+  gap: 1.5rem;
+  color: var(--c-champagne);
+}
+
+.included__link span {
+  font-size: 0.9rem;
+}
+
+
+/* ============================================================
+   AMENITIES
+   ============================================================ */
+
+.included__amenities {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  border-top: 1px solid rgba(205, 171, 104, 0.2);
+}
+
+
+/* ============================================================
+   AMENITY
+   ============================================================ */
+
+.included__amenity {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+
+  min-height: 105px;
+
+  padding: 1.2rem 1.5rem;
+
+  border-bottom: 1px solid rgba(205, 171, 104, 0.15);
+
+  border-right: 1px solid rgba(205, 171, 104, 0.15);
+
+  opacity: 0;
+  transform: translateY(25px);
+
+  transition:
+    opacity 700ms ease,
+    transform 700ms var(--ease-cinematic),
+    background 300ms ease;
+}
+
+
+/* stagger */
+
+.included.is-visible .included__amenity {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.included.is-visible .included__amenity:nth-child(1) {
+  transition-delay: 250ms;
+}
+
+.included.is-visible .included__amenity:nth-child(2) {
+  transition-delay: 330ms;
+}
+
+.included.is-visible .included__amenity:nth-child(3) {
+  transition-delay: 410ms;
+}
+
+.included.is-visible .included__amenity:nth-child(4) {
+  transition-delay: 490ms;
+}
+
+.included.is-visible .included__amenity:nth-child(5) {
+  transition-delay: 570ms;
+}
+
+.included.is-visible .included__amenity:nth-child(6) {
+  transition-delay: 650ms;
+}
+
+.included.is-visible .included__amenity:nth-child(7) {
+  transition-delay: 730ms;
+}
+
+.included.is-visible .included__amenity:nth-child(8) {
+  transition-delay: 810ms;
+}
+
+
+.included__amenity:nth-child(even) {
+  border-right: 0;
+}
+
+.included__amenity:hover {
+  background: rgba(205, 171, 104, 0.035);
+}
+
+
+/* ============================================================
+   ICON
+   ============================================================ */
+
+.included__icon {
+  flex-shrink: 0;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(205, 171, 104, 0.28);
+  border-radius: 50%;
+
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+
+  color: var(--c-champagne);
+
+  transition:
+    background 300ms ease,
+    border-color 300ms ease;
+}
+
+.included__amenity:hover .included__icon {
+  background: rgba(205, 171, 104, 0.08);
+  border-color: var(--c-champagne);
+}
+
+
+/* ============================================================
+   TEXT
+   ============================================================ */
+
+.included__amenity div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.included__amenity strong {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 400;
+
+  letter-spacing: 0.04em;
+
+  color: var(--c-ivory);
+}
+
+.included__amenity small {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+
+  color: var(--c-text-on-dark-muted);
+}
+
+
+/* ============================================================
+   STAMP
+   ============================================================ */
+
+.included__stamp {
+  position: absolute;
+
+  right: 3rem;
+  bottom: 2rem;
+
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  opacity: 0;
+
+  transform: rotate(-6deg);
+
+  transition:
+    opacity 800ms ease 1.2s;
+}
+
+.included.is-visible .included__stamp {
+  opacity: 0.6;
+}
+
+.included__stamp span {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: 0.16em;
+}
+
+.included__stamp small {
+  padding-left: 0.8rem;
+
+  border-left: 1px solid rgba(205, 171, 104, 0.35);
+
+  font-family: var(--font-body);
+  font-size: 0.42rem;
+  line-height: 1.4;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 800px) {
+
+  .included {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+
+    padding:
+      5rem
+      var(--space-gutter);
+  }
+
+  .included__intro {
+    margin-bottom: 3rem;
+  }
+
+  .included__amenities {
+    grid-template-columns: 1fr;
+  }
+
+  .included__amenity {
+    min-height: 85px;
+
+    border-right: 0;
+  }
+
+  .included__stamp {
+    display: none;
+  }
+}
+
+/* ============================================================
+   SECTION 08 — EXPERIENCES
+   ============================================================ */
+
+.experiences {
+  position: relative;
+
+  min-height: 100svh;
+
+  padding:
+    clamp(5rem, 8vw, 7rem)
+    var(--space-gutter);
+
+  overflow: hidden;
+
+  background: var(--c-charcoal);
+  color: var(--c-ivory);
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.experiences__header {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 3rem;
+
+  margin-bottom: 3rem;
+
+  opacity: 0;
+  transform: translateY(35px);
+
+  transition:
+    opacity 900ms var(--ease-cinematic),
+    transform 900ms var(--ease-cinematic);
+}
+
+.experiences.is-visible .experiences__header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.experiences__eyebrow {
+  position: absolute;
+  left: 0;
+  top: -2rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: var(--c-champagne);
+}
+
+.experiences__eyebrow i {
+  width: 28px;
+  height: 1px;
+
+  background: var(--c-champagne-dim);
+}
+
+
+.experiences h2 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 5.3rem);
+
+  font-weight: 400;
+  line-height: 0.92;
+
+  letter-spacing: -0.035em;
+}
+
+
+.experiences__link {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding-bottom: 0.65rem;
+
+  border-bottom: 1px solid var(--c-champagne);
+
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  color: var(--c-ivory);
+
+  text-decoration: none;
+
+  transition:
+    gap 300ms ease,
+    color 300ms ease;
+}
+
+.experiences__link:hover {
+  gap: 1.5rem;
+  color: var(--c-champagne);
+}
+
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+
+.experiences__gallery {
+  display: grid;
+
+  grid-template-columns: 1.25fr 0.85fr 1fr;
+
+  gap: 1rem;
+
+  height: 48svh;
+}
+
+
+/* ============================================================
+   CARD
+   ============================================================ */
+
+.experience {
+  position: relative;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  background: #111;
+
+  opacity: 0;
+
+  transform: translateY(60px);
+
+  transition:
+    opacity 900ms var(--ease-cinematic),
+    transform 900ms var(--ease-cinematic);
+}
+
+.experiences.is-visible .experience {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.experiences.is-visible .experience--landscape {
+  transition-delay: 250ms;
+}
+
+.experiences.is-visible .experience--moment {
+  transition-delay: 450ms;
+}
+
+.experiences.is-visible .experience--journey {
+  transition-delay: 650ms;
+}
+
+
+/* ============================================================
+   IMAGE
+   ============================================================ */
+
+.experience__image {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+}
+
+.experience__image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  filter: saturate(0.8) brightness(0.72);
+
+  transform: scale(1.06);
+
+  transition:
+    transform 1.2s var(--ease-cinematic),
+    filter 600ms ease;
+}
+
+.experience:hover .experience__image img {
+  transform: scale(1.025);
+  filter: saturate(0.95) brightness(0.82);
+}
+
+
+/* ============================================================
+   OVERLAY
+   ============================================================ */
+
+.experience__overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(8, 9, 8, 0.82),
+      rgba(8, 9, 8, 0.05) 70%
+    );
+}
+
+
+/* ============================================================
+   CONTENT
+   ============================================================ */
+
+.experience__content {
+  position: absolute;
+
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 1.5rem;
+
+  z-index: 2;
+}
+
+.experience__content > span {
+  display: block;
+
+  margin-bottom: 0.55rem;
+
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+
+  letter-spacing: 0.14em;
+
+  color: var(--c-champagne);
+}
+
+.experience h3 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.4vw, 2.5rem);
+
+  font-weight: 400;
+  line-height: 1;
+
+  letter-spacing: -0.02em;
+}
+
+.experience p {
+  max-width: 30ch;
+
+  margin: 0.7rem 0 0;
+
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+
+  line-height: 1.6;
+
+  color: var(--c-text-on-dark-muted);
+}
+
+
+/* ============================================================
+   SIDE NOTE
+   ============================================================ */
+
+.experiences__note {
+  position: absolute;
+
+  right: var(--space-gutter);
+  bottom: 2rem;
+
+  writing-mode: vertical-rl;
+
+  font-family: var(--font-body);
+  font-size: 0.48rem;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: var(--c-text-on-dark-muted);
+
+  opacity: 0;
+
+  transition: opacity 800ms ease 1.3s;
+}
+
+.experiences.is-visible .experiences__note {
+  opacity: 1;
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 800px) {
+
+  .experiences {
+    min-height: auto;
+
+    padding:
+      5rem
+      var(--space-gutter);
+  }
+
+  .experiences__header {
+    display: block;
+
+    margin-bottom: 3rem;
+  }
+
+  .experiences__eyebrow {
+    position: static;
+
+    margin-bottom: 1.5rem;
+  }
+
+  .experiences__link {
+    margin-top: 1.8rem;
+  }
+
+  .experiences__gallery {
+    grid-template-columns: 1fr;
+
+    height: auto;
+
+    gap: 1rem;
+  }
+
+  .experience {
+    height: 55svh;
+  }
+
+  .experiences__note {
+    display: none;
+  }
+}
+
+/* ============================================================
+   SECTION 09 — YOUR STAY
+   ============================================================ */
+
+.booking {
+  position: relative;
+  min-height: 58svh;
+
+  display: grid;
+  grid-template-columns: 30% 70%;
+  align-items: center;
+
+  padding:
+    clamp(4rem, 6vw, 6rem)
+    var(--space-gutter);
+
+  overflow: hidden;
+
+  background: var(--c-ivory);
+  color: var(--c-text-on-light);
+}
+
+
+/* ============================================================
+   INTRO
+   ============================================================ */
+
+.booking__intro {
+  position: relative;
+  z-index: 2;
+
+  max-width: 360px;
+
+  opacity: 0;
+  transform: translateY(35px);
+
+  transition:
+    opacity 900ms var(--ease-cinematic),
+    transform 900ms var(--ease-cinematic);
+}
+
+.booking.is-visible .booking__intro {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ============================================================
+   EYEBROW
+   ============================================================ */
+
+.booking__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  margin-bottom: 1.3rem;
+
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: var(--c-text-on-light-muted);
+}
+
+.booking__eyebrow i {
+  width: 28px;
+  height: 1px;
+
+  background: var(--c-champagne-dim);
+}
+
+
+/* ============================================================
+   HEADING
+   ============================================================ */
+
+.booking h2 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(2.7rem, 4vw, 4.5rem);
+  font-weight: 400;
+
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+
+  color: var(--c-text-on-light);
+}
+
+
+/* ============================================================
+   DESCRIPTION
+   ============================================================ */
+
+.booking__intro p {
+  max-width: 30ch;
+
+  margin: 1.4rem 0 0;
+
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+
+  line-height: 1.7;
+
+  color: var(--c-text-on-light-muted);
+}
+
+
+/* ============================================================
+   BOOKING FORM
+   ============================================================ */
+
+.booking__form {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    0.7fr
+    auto;
+
+  align-items: end;
+
+  gap: 0.8rem;
+
+  padding: 2rem;
+
+  border-top: 1px solid rgba(80, 70, 50, 0.18);
+  border-bottom: 1px solid rgba(80, 70, 50, 0.18);
+
+  opacity: 0;
+  transform: translateY(35px);
+
+  transition:
+    opacity 900ms ease 200ms,
+    transform 900ms var(--ease-cinematic) 200ms;
+}
+
+.booking.is-visible .booking__form {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ============================================================
+   FIELD
+   ============================================================ */
+
+.booking__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.booking__field label {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  color: var(--c-text-on-light-muted);
+}
+
+
+/* ============================================================
+   INPUT WRAPPER
+   ============================================================ */
+
+.booking__input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-width: 145px;
+
+  padding: 0.9rem;
+
+  border: 1px solid rgba(80, 70, 50, 0.22);
+
+  background: rgba(255, 255, 255, 0.25);
+
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+
+  letter-spacing: 0.08em;
+
+  color: var(--c-text-on-light);
+
+  transition:
+    border-color 250ms ease,
+    background 250ms ease;
+}
+
+.booking__input:hover,
+.booking__input:focus-within {
+  border-color: var(--c-champagne);
+
+  background: rgba(255, 255, 255, 0.45);
+}
+
+
+/* ============================================================
+   DATE INPUT + SELECT
+   ============================================================ */
+
+.booking__input input,
+.booking__input select {
+  width: 100%;
+
+  padding: 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+
+  letter-spacing: 0.08em;
+
+  color: var(--c-text-on-light);
+
+  cursor: pointer;
+}
+
+.booking__input input {
+  min-width: 125px;
+}
+
+.booking__input select {
+  appearance: none;
+}
+
+
+/* ============================================================
+   CALENDAR / ARROW ICONS
+   ============================================================ */
+
+.booking__calendar,
+.booking__arrow {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--c-champagne-dim);
+
+  font-size: 1rem;
+}
+
+
+/* SVG — slightly larger and visible */
+
+.booking svg {
+  width: 20px;
+  height: 20px;
+
+  flex-shrink: 0;
+
+  stroke-width: 1.5;
+
+  color: var(--c-champagne-dim);
+
+  transition:
+    color 250ms ease,
+    transform 250ms ease;
+}
+
+.booking__calendar svg,
+.booking__arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.booking__input:hover svg,
+.booking__input:focus-within svg {
+  color: var(--c-champagne);
+
+  transform: scale(1.08);
+}
+
+
+/* Native browser calendar icon */
+
+.booking__input input::-webkit-calendar-picker-indicator {
+  width: 18px;
+  height: 18px;
+
+  opacity: 0.55;
+
+  cursor: pointer;
+}
+
+
+/* ============================================================
+   CHECK AVAILABILITY BUTTON
+   ============================================================ */
+
+.booking__button {
+  height: 43px;
+
+  padding: 0 1.5rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+
+  border: 1px solid #151615;
+
+  background: #111210;
+
+  color: var(--c-ivory);
+
+  font-family: var(--font-body);
+  font-size: 0.56rem;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 300ms ease,
+    color 300ms ease,
+    gap 300ms ease;
+}
+
+.booking__button:hover {
+  gap: 1.4rem;
+
+  background: var(--c-champagne);
+  color: #111;
+}
+
+
+/* ============================================================
+   ASSURANCE
+   ============================================================ */
+
+.booking__assurance {
+  position: absolute;
+
+  left: 30%;
+  bottom: 2.2rem;
+
+  display: flex;
+  gap: 1.5rem;
+
+  font-family: var(--font-body);
+  font-size: 0.48rem;
+
+  letter-spacing: 0.05em;
+
+  color: var(--c-text-on-light-muted);
+
+  opacity: 0;
+
+  transition:
+    opacity 700ms ease 700ms;
+}
+
+.booking.is-visible .booking__assurance {
+  opacity: 1;
+}
+
+.booking__assurance i {
+  margin-right: 0.35rem;
+
+  color: var(--c-champagne-dim);
+}
+
+
+/* ============================================================
+   AVAILABILITY RESULT
+   ============================================================ */
+
+.booking__result {
+  position: absolute;
+
+  left: 30%;
+  bottom: 0.75rem;
+
+  z-index: 5;
+
+  max-width: 60%;
+
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+
+  color: var(--c-text-on-light-muted);
+
+  opacity: 0;
+  transform: translateY(8px);
+
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease;
+}
+
+.booking__result:not(:empty) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.booking__result--success {
+  color: #667055;
+}
+
+.booking__result--error {
+  color: #9a5d4d;
+}
+
+
+/* ============================================================
+   DECORATIVE COORDINATES
+   ============================================================ */
+
+.booking__sketch {
+  position: absolute;
+
+  right: 2.5rem;
+  bottom: 1.8rem;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: var(--font-body);
+  font-size: 0.42rem;
+
+  letter-spacing: 0.12em;
+
+  color: rgba(80, 70, 50, 0.35);
+
+  transform: rotate(-8deg);
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  .booking {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+
+    padding:
+      5rem
+      var(--space-gutter);
+  }
+
+  .booking__intro {
+    margin-bottom: 3rem;
+  }
+
+  .booking__form {
+    grid-template-columns: 1fr 1fr;
+
+    padding: 1.5rem 0;
+  }
+
+  .booking__button {
+    grid-column: 1 / -1;
+
+    width: 100%;
+  }
+
+  .booking__assurance {
+    position: static;
+
+    margin-top: 1.5rem;
+
+    flex-wrap: wrap;
+  }
+
+  .booking__result {
+    position: static;
+
+    max-width: 100%;
+
+    margin-top: 1rem;
+  }
+
+  .booking__sketch {
+    display: none;
+  }
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 520px) {
+
+  .booking {
+    padding:
+      4.5rem
+      var(--space-gutter);
+  }
+
+  .booking h2 {
+    font-size: clamp(2.7rem, 13vw, 4rem);
+  }
+
+  .booking__form {
+    grid-template-columns: 1fr;
+  }
+
+  .booking__input {
+    width: 100%;
+  }
+
+  .booking__input input {
+    min-width: 0;
+  }
+
+  .booking__assurance {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

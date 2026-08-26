@@ -1,0 +1,78 @@
+
+<header class="navbar" [class.navbar--scrolled]="isScrolled">
+  <div class="navbar__row">
+
+    <!-- Logo -->
+    <a class="navbar__logo" routerLink="/" (click)="closeMenu()">
+      LUN<span class="navbar__logo-accent">É</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="navbar__links" aria-label="Primary">
+      <a
+        *ngFor="let link of navLinks"
+        class="navbar__link"
+        [routerLink]="link.route"
+        (click)="handleNavigation(link)"
+      >
+        {{ link.label }}
+      </a>
+    </nav>
+
+    <!-- Actions -->
+    <div class="navbar__actions">
+
+      <button
+        type="button"
+        class="navbar__cta"
+        (click)="navigateToBooking()"
+      >
+        Book Your Stay
+      </button>
+
+      <button
+        type="button"
+        class="navbar__menu-btn"
+        [attr.aria-expanded]="isMenuOpen"
+        aria-label="Toggle navigation menu"
+        (click)="toggleMenu()"
+      >
+        <span
+          class="navbar__menu-icon"
+          [class.is-open]="isMenuOpen"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile Overlay -->
+  <div
+    class="navbar__overlay"
+    [class.is-open]="isMenuOpen"
+    aria-hidden="!isMenuOpen"
+  >
+    <nav class="navbar__overlay-links" aria-label="Mobile navigation">
+      <a
+        *ngFor="let link of navLinks; let i = index"
+        [routerLink]="link.route"
+        [style.transition-delay.ms]="isMenuOpen ? 80 * i : 0"
+        (click)="handleNavigation(link)"
+      >
+        {{ link.label }}
+      </a>
+    </nav>
+
+    <button
+      type="button"
+      class="navbar__overlay-cta"
+      (click)="navigateToBooking()"
+    >
+      Book Your Stay
+    </button>
+  </div>
+</header>

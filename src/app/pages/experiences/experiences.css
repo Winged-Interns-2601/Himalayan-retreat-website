@@ -1,0 +1,28 @@
+/* ============================================================
+   LUNÉ — EXPERIENCES PAGE
+   ============================================================ */
+
+.experiences-page {
+  width: 100%;
+  overflow: hidden;
+
+  background: var(--c-charcoal);
+  color: var(--c-ivory);
+}
+
+
+/* Prevent horizontal overflow from cinematic layouts */
+
+.experiences-page section {
+  width: 100%;
+}
+
+
+/* ============================================================
+   GLOBAL EXPERIENCE PAGE SELECTION
+   ============================================================ */
+
+.experiences-page ::selection {
+  background: var(--c-champagne);
+  color: #111;
+}

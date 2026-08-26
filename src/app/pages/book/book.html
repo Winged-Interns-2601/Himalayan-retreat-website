@@ -1,0 +1,493 @@
+<div class="booking-page">
+
+  <!-- =========================================
+       HEADER
+  ========================================== -->
+
+  <header class="booking-header">
+
+    <button
+      type="button"
+      class="booking-logo"
+      (click)="backToHome()"
+    >
+      LUNÉ
+    </button>
+
+    <span class="booking-header__label">
+      PRIVATE STAYS · HIMACHAL
+    </span>
+
+  </header>
+
+
+  <!-- =========================================
+       HERO
+  ========================================== -->
+
+  <section class="booking-hero">
+
+    <div class="booking-hero__image"></div>
+
+    <div class="booking-hero__overlay"></div>
+
+    <div class="booking-hero__content">
+
+      <span class="booking-eyebrow">
+        YOUR STAY BEGINS HERE
+      </span>
+
+      <h1>
+        Stay a little
+        <em>slower.</em>
+      </h1>
+
+      <p>
+        Choose your dates, discover your retreat,
+        and let the mountains take care of the rest.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       BOOKING AREA
+  ========================================== -->
+
+  <main class="booking-main">
+
+    <!-- =======================================
+         SUCCESS STATE
+    ======================================== -->
+
+    <section
+      class="booking-success"
+      *ngIf="isSubmitted"
+    >
+
+      <span class="booking-success__number">
+        LUNÉ · 01
+      </span>
+
+      <h2>
+        Your stay
+        <em>awaits.</em>
+      </h2>
+
+      <p>
+        Thank you, {{ guestName }}.
+        Your request for
+        <strong>{{ selectedStay }}</strong>
+        has been received.
+      </p>
+
+      <p class="booking-success__details">
+        {{ checkIn }} → {{ checkOut }}
+        <br>
+        {{ adults }} Adults ·
+        {{ children }} Children
+      </p>
+
+      <button
+        type="button"
+        class="booking-button"
+        (click)="backToHome()"
+      >
+        RETURN HOME
+        <span>↗</span>
+      </button>
+
+    </section>
+
+
+    <!-- =======================================
+         BOOKING FORM
+    ======================================== -->
+
+    <form
+      *ngIf="!isSubmitted"
+      class="booking-form"
+      (ngSubmit)="submitBooking()"
+    >
+
+
+      <!-- =====================================
+           01 — DATES
+      ====================================== -->
+
+      <section class="booking-block">
+
+        <div class="booking-block__heading">
+
+          <span>01</span>
+
+          <div>
+
+            <small>
+              YOUR JOURNEY
+            </small>
+
+            <h2>
+              When will you
+              <em>arrive?</em>
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="date-grid">
+
+          <label>
+
+            <span>
+              CHECK IN
+            </span>
+
+            <input
+              type="date"
+              name="checkIn"
+              [(ngModel)]="checkIn"
+              [min]="minDate"
+              required
+            >
+
+          </label>
+
+
+          <label>
+
+            <span>
+              CHECK OUT
+            </span>
+
+            <input
+              type="date"
+              name="checkOut"
+              [(ngModel)]="checkOut"
+              [min]="checkIn || minDate"
+              required
+            >
+
+          </label>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================
+           02 — GUESTS
+      ====================================== -->
+
+      <section class="booking-block">
+
+        <div class="booking-block__heading">
+
+          <span>02</span>
+
+          <div>
+
+            <small>
+              YOUR COMPANY
+            </small>
+
+            <h2>
+              Who is
+              <em>coming?</em>
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="guest-controls">
+
+
+          <!-- ADULTS -->
+
+          <div class="guest-control">
+
+            <div>
+
+              <strong>
+                Adults
+              </strong>
+
+              <small>
+                12+ years
+              </small>
+
+            </div>
+
+
+            <div class="counter">
+
+              <button
+                type="button"
+                (click)="decreaseAdults()"
+              >
+                −
+              </button>
+
+              <span>
+                {{ adults }}
+              </span>
+
+              <button
+                type="button"
+                (click)="increaseAdults()"
+              >
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- CHILDREN -->
+
+          <div class="guest-control">
+
+            <div>
+
+              <strong>
+                Children
+              </strong>
+
+              <small>
+                0–11 years
+              </small>
+
+            </div>
+
+
+            <div class="counter">
+
+              <button
+                type="button"
+                (click)="decreaseChildren()"
+              >
+                −
+              </button>
+
+              <span>
+                {{ children }}
+              </span>
+
+              <button
+                type="button"
+                (click)="increaseChildren()"
+              >
+                +
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================
+           03 — STAY
+      ====================================== -->
+
+      <section class="booking-block">
+
+        <div class="booking-block__heading">
+
+          <span>03</span>
+
+          <div>
+
+            <small>
+              YOUR RETREAT
+            </small>
+
+            <h2>
+              Choose your
+              <em>stay.</em>
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="stay-grid">
+
+          <button
+            type="button"
+            class="stay-card"
+            *ngFor="let stay of stays"
+            [class.selected]="
+              selectedStay === stay.name
+            "
+            (click)="selectStay(stay.name)"
+          >
+
+            <div class="stay-card__image">
+
+              <img
+                [src]="stay.image"
+                [alt]="stay.name"
+              >
+
+            </div>
+
+
+            <div class="stay-card__content">
+
+              <span>
+                PRIVATE RETREAT
+              </span>
+
+              <h3>
+                {{ stay.name }}
+              </h3>
+
+              <p>
+                {{ stay.description }}
+              </p>
+
+              <strong>
+                {{ stay.price }}
+                <small>
+                  / NIGHT
+                </small>
+              </strong>
+
+            </div>
+
+
+            <div class="stay-card__check">
+              ✓
+            </div>
+
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================
+           04 — GUEST DETAILS
+      ====================================== -->
+
+      <section class="booking-block">
+
+        <div class="booking-block__heading">
+
+          <span>04</span>
+
+          <div>
+
+            <small>
+              ALMOST THERE
+            </small>
+
+            <h2>
+              Tell us
+              <em>about you.</em>
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="details-grid">
+
+
+          <label>
+
+            <span>
+              FULL NAME
+            </span>
+
+            <input
+              type="text"
+              name="guestName"
+              [(ngModel)]="guestName"
+              placeholder="Your name"
+              required
+            >
+
+          </label>
+
+
+          <label>
+
+            <span>
+              EMAIL ADDRESS
+            </span>
+
+            <input
+              type="email"
+              name="guestEmail"
+              [(ngModel)]="guestEmail"
+              placeholder="you@example.com"
+              required
+            >
+
+          </label>
+
+
+          <label>
+
+            <span>
+              PHONE NUMBER
+            </span>
+
+            <input
+              type="tel"
+              name="guestPhone"
+              [(ngModel)]="guestPhone"
+              placeholder="+91 00000 00000"
+              required
+            >
+
+          </label>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================
+           CONFIRM
+      ====================================== -->
+
+      <div class="booking-submit">
+
+        <p>
+          By continuing, you are requesting a
+          reservation with LUNÉ. Your stay will
+          be confirmed after availability is checked.
+        </p>
+
+
+        <button
+          type="submit"
+          class="booking-button"
+        >
+          CONFIRM YOUR STAY
+          <span>↗</span>
+        </button>
+
+      </div>
+
+    </form>
+
+  </main>
+
+</div>
